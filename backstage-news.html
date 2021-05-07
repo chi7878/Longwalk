@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/backstage.css">
+</head>
+<body>
+    <header class="header">
+        <article class="header-box">
+            <img src="./images/logo.png" alt="">
+            <h1>後台</h1>
+        </article>
+        <nav class="header-nav">
+            <ul class="header-list">
+                <li class="header-item">
+                    <a href="./backstage-news.html">最新消息</a>
+                </li>
+                <li class="header-item">
+                    <a href="./backstage-activity.html">活動</a>
+                </li>
+                <li class="header-item">
+                    <a href="./backstage-videos.html">影音資訊</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article class="content">
+        <h3 class="content-title">訊息列表</h3>
+        <div class="icon-btn__add">新增</div>
+        <ul class="content-list">
+            <li class="content-item">
+                <p class="content-item__date">2021-05-07</p>
+                <p class="content-item__title">100位茶道藝術家 露天茶席品茗 邀你「走靜貓空」喝杯上等木柵鐵觀音</p>
+                <div class="icon-btns">
+                    <div class="icon-btn icon-btn__edit">編輯</div>
+                    <div class="icon-btn">刪除</div>
+                </div>
+            </li>
+            <li class="content-item">
+                <p class="content-item__date">2021-05-07</p>
+                <p class="content-item__title">100位茶道藝術家 露天茶席品茗 邀你「走靜貓空」喝杯上等木柵鐵觀音</p>
+                <div class="icon-btns">
+                    <div class="icon-btn icon-btn__edit">編輯</div>
+                    <div class="icon-btn">刪除</div>
+                </div>            
+            </li>
+            <li class="content-item">
+                <p class="content-item__date">2021-05-07</p>
+                <p class="content-item__title">100位茶道藝術家 露天茶席品茗 邀你「走靜貓空」喝杯上等木柵鐵觀音</p>
+                <div class="icon-btns">
+                    <div class="icon-btn icon-btn__edit">編輯</div>
+                    <div class="icon-btn">刪除</div>
+                </div>            
+            </li>
+        </ul>
+    </article>
+    <article class="popup popup-hidden">
+        <div class="popup-box">
+            <h3>新增</h3>
+            <div class="input-box">
+                <label class="input-label" for="title">
+                    <p class="input-text">標題:</p>
+                    <input class="input-value" type="text" name="title" id="">
+                </label>
+                <label class="input-label" for="content">
+                    <p class="input-text">內容:</p>
+                    <textarea class="input-textarea" name="content" id=""></textarea>
+                </label>
+            </div>
+            <div class="popup-btns">
+                <div class="popup-btn popup-btn_close">取消</div>
+                <div class="popup-btn">新增</div>
+            </div>
+            <div class="close-btn popup-btn_close"></div>
+        </div>
+    </article>
+</body>
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/backstage.js"></script>
+</html>

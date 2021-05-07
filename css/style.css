@@ -207,6 +207,15 @@ body, html {
     line-height: 50px;
 }
 
+.nav-mobile__span {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.nav-mobile__span_rotate {
+    transform: rotate(180deg);
+}
+
 .nav-mobile__activity-list {
     width: 80%;
     margin: 0 auto;

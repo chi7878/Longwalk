@@ -43,16 +43,28 @@ $(document).ready(function () {
     });
 
     $('.nav-mobile__href_activity').click(function() {
-        $('.nav-mobile__item_activity').slideToggle( "slow" );
+        $('.nav-mobile__item_activity').slideToggle("slow");
+        $('.nav-mobile__span').toggleClass("nav-mobile__span_rotate");
     })
 
-    $('.menu').click(function() {
+    $('.menu').click(function(event) {
         $('.menu').toggleClass( "menu__active" );
         $('.nav-mobile__menu').toggleClass( "nav-mobile__menu_show" );
     })
 
-    // $(window).click(function(event) {
-    //     console.log(event);
-    //     $('.nav-dropdown').hide();
-    // })
+    $(window).click(function (e) { 
+        const classlist = ['', '__item', '__icon', '__title'];
+        if (!classlist.find(item => `nav-dropdown${item}` === e.target.className) && 
+        'nav-item__btn nav-item__btn_dropdown' !== e.target.className) {
+            $('.nav-dropdown').hide();
+        }
+    });
+
+    $('.map').hover(function (event) {
+            console.log(123, event);
+            
+        }, function () {
+            // out
+        }
+    );
 });
