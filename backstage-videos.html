@@ -32,7 +32,7 @@
         <h3 class="content-title">影音資訊</h3>
         <div class="icon-btn__add">新增</div>
         <ul class="content-list">
-            <li class="content-item">
+            <!-- <li class="content-item">
                 <p class="content-item__title">影音資訊標頭</p>
                 <div class="icon-btns">
                     <div class="icon-btn icon-btn__edit">編輯</div>
@@ -52,7 +52,7 @@
                     <div class="icon-btn icon-btn__edit">編輯</div>
                     <div class="icon-btn">刪除</div>
                 </div>            
-            </li>
+            </li> -->
         </ul>
     </article>
     <article class="popup popup-hidden">
@@ -61,24 +61,30 @@
             <div class="input-box input-box_activity">
                 <label class="input-label" for="title">
                     <p class="input-text">標題:</p>
-                    <input class="input-value input-value_videos" type="text" name="title" id="">
+                    <input class="input-value input-value_videos" type="text" name="title" id="title">
                 </label>
-                <label class="input-label " for="status">
-                    <input type="radio" name="status" value="0" checked>圖片
-                    <input type="radio" name="status" value="1">影片
+                <label class="input-label input-label_radio" for="status">
+                    <input type="radio" name="status" value="0">影片
+                    <input type="radio" name="status" value="1" checked>圖片
                 </label>
-                <label class="input-label" for="time">
-                    <p class="input-text">影片網址:</p>
-                    <input class="input-value" type="text" name="time" id="">
-                </label>
-                <label class="input-label" for="time">
+                <div class="input-upload">
                     <p class="input-text">圖片上傳:</p>
-                    <input class="input-value" type="file" name="time" id="">
+                    <div class="input-file__box">
+                        <label class="input-label__file" for="file">
+                            <p class="input-upload__btn">上傳+</p>
+                            <input class="input-file" type="file" id="file">
+                        </label>
+                        <p class="input-file__text">選擇檔案</p>
+                    </div>
+                </div>
+                <label class="input-label input-label_videos" for="href">
+                    <p class="input-text">影片網址:</p>
+                    <input class="input-value" type="text" name="href">
                 </label>
             </div>
             <div class="popup-btns">
                 <div class="popup-btn popup-btn_close">取消</div>
-                <div class="popup-btn">新增</div>
+                <div class="popup-btn popup-btn_confirm">新增</div>
             </div>
             <div class="close-btn popup-btn_close"></div>
         </div>

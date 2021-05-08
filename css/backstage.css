@@ -391,3 +391,31 @@ body {
 .input-value_videos {
     margin-bottom: 10px;
 }
+
+.input-file__box {
+    border: 1px solid #468D80;
+    display: flex;
+    align-items: center;
+    padding: 3px 5px;
+}
+
+.input-file {
+    display: none;
+}
+
+.input-upload__btn {
+    background-color: #468D80;
+    padding: 3px 5px;
+    margin-right: 5px;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.input-file__text {
+    max-width: 80%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 19px;
+}
