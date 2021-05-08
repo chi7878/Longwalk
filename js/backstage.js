@@ -18,11 +18,15 @@ $(document).ready(function () {
         case window.location.href.indexOf("backstage-news") !== -1:
             newsFn();
             break;
+        case window.location.href.indexOf("backstage-activity") !== -1:
+            activityFn();
+            break;
         case window.location.href.indexOf("backstage-videos") !== -1:
             videosFn();
             break;
+        default:
+            break;
     }
-
     function newsFn() {
         const list =  [
             {
@@ -38,55 +42,144 @@ $(document).ready(function () {
                 date: '2020-12-12',
             },
         ];
+        let selectId = undefined;
 
-        let strHtml = "";
+        showData();
 
-        list.forEach(function (item) {
-            strHtml += `
-            <li class="content-item">
-                <p class="content-item__title">${item.title}</p>
-                <div class="icon-btns">
-                    <div class="icon-btn icon-btn__edit" data-id="${item.id}">編輯</div>
-                    <div class="icon-btn">刪除</div>
-                </div>
-            </li>
-            `;
+        function showData() {
+            let strHtml = "";
+    
+            list.forEach(function (item) {
+                strHtml += `
+                    <li class="content-item">
+                        <p class="content-item__date">${item.date}</p>
+                        <p class="content-item__title">${item.title}</p>
+                        <div class="icon-btns">
+                            <div class="icon-btn icon-btn__edit" data-id="${item.id}">編輯</div>
+                            <div class="icon-btn">刪除</div>
+                        </div>
+                    </li>
+                `;
+            });
+    
+            $(".content-list").html(strHtml);
+        }
+
+        function restPopup() {
+            $(".input-value").val('');
+            $(".input-textarea").val('');
+        }
+
+        function fromData() {
+            return {
+                title: $(".input-value").val(),
+                content: $(".input-textarea").val(),
+            }
+        }
+
+        $('.icon-btn__add').click(function (e) { 
+            restPopup();
         });
-
-        $(".content-list").html(strHtml);
 
         $(".icon-btn__edit").click(function (e) {
             e.preventDefault();
 
-            if (!list.find((item) => item.id == e.currentTarget.dataset.id)) {
+            if (!list.find(item => item.id.toString() === e.currentTarget.dataset.id)) {
                 return;
             }
 
             $(".popup").removeClass("popup-hidden");
             $(".popup-box > h3,.popup-btn_confirm").text("編輯");
-            console.log(e.currentTarget.dataset.id);
-            const findData = JSON.parse(JSON.stringify(list.find((item) => item.id == e.currentTarget.dataset.id)));
-            $(".input-value_videos").val(findData.title);
-            $(`.input-label_radio > input[value='${findData.id}']`).attr("checked", true);
-            $(".input-file__text").text("");
-            $(".input-file__text").attr("title", "");
-            $(".input-label_videos > .input-value").val("");
+            restPopup();
+            const findData = JSON.parse(JSON.stringify(list.find(item => item.id.toString() === e.currentTarget.dataset.id)));
+            selectId = findData.id
+            $(".input-value").val(findData.title);
+            $(".input-textarea").val(findData.content);
 
-            if (findData.id === 1) {
-                $(".input-label_videos").hide();
-                $(".input-upload").show();
-                $(".input-file__text").text(findData.content);
-                $(".input-file__text").attr("title", findData.content);
-            } else {
-                $(".input-upload").hide();
-                $(".input-label_videos").show();
-                $(".input-label_videos > .input-value").val(findData.content);
-            }
         });
 
-        $('.input-label_radio > input[name="status"]').change(function (e) {
+        $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
-            console.log(e.currentTarget.value);
+            console.log(fromData(), selectId);
+        });
+
+        $(".popup-btn_close").click(function (e) {
+            selectId = undefined;
+        });
+    }
+
+    function activityFn() {
+        const list =  [
+            {
+                id: 1,
+                status: 0,
+                title: "活動昆蟲GO!",
+                content: "活動昆蟲GO!活動昆蟲GO!活動昆蟲GO!活動昆蟲GO!活動昆蟲GO!活動昆蟲GO!",
+            }
+        ];
+        let selectId = undefined;
+
+        showData();
+
+        function showData() {
+            let strHtml = "";
+    
+            list.forEach(function (item) {
+                strHtml += `
+                    <li class="content-item">
+                        <p class="content-item__date">${item.date}</p>
+                        <p class="content-item__title">${item.title}</p>
+                        <div class="icon-btns">
+                            <div class="icon-btn icon-btn__edit" data-id="${item.id}">編輯</div>
+                            <div class="icon-btn">刪除</div>
+                        </div>
+                    </li>
+                `;
+            });
+    
+            $(".content-list").html(strHtml);
+        }
+
+        function restPopup() {
+            $(".input-value").val('');
+            $(".input-textarea").val('');
+        }
+
+        function fromData() {
+            return {
+                title: $(".input-value").val(),
+                content: $(".input-textarea").val(),
+            }
+        }
+
+        $('.icon-btn__add').click(function (e) { 
+            restPopup();
+        });
+
+        $(".icon-btn__edit").click(function (e) {
+            e.preventDefault();
+
+            if (!list.find(item => item.id.toString() === e.currentTarget.dataset.id)) {
+                return;
+            }
+
+            $(".popup").removeClass("popup-hidden");
+            $(".popup-box > h3,.popup-btn_confirm").text("編輯");
+            restPopup();
+            const findData = JSON.parse(JSON.stringify(list.find(item => item.id.toString() === e.currentTarget.dataset.id)));
+            selectId = findData.id
+            $(".input-value").val(findData.title);
+            $(".input-textarea").val(findData.content);
+
+        });
+
+        $('.popup-btn_confirm').click(function (e) { 
+            e.preventDefault();
+            console.log(fromData(), selectId);
+        });
+
+        $(".popup-btn_close").click(function (e) {
+            selectId = undefined;
         });
     }
 
@@ -203,7 +296,8 @@ $(document).ready(function () {
 
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
-            console.log(fromData(), selectId);
+            const status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : 1;
+            console.log(fromData(), selectId, status);
         });
 
         $(".popup-btn_close").click(function (e) {
