@@ -20,6 +20,7 @@ $(document).ready(function () {
     });
 
     $(".news-list").overlayScrollbars({});
+    $(".nav-mobile__list").overlayScrollbars({});
 
     $.ajax({
         type: "GET",
@@ -27,15 +28,33 @@ $(document).ready(function () {
         dataType: "json",
         success: function (response) {
             let strHtml = '';
+            let phoneStrHtml = '';
             response.forEach(function(data) {
-                console.log(data);
                 strHtml += `
-                <a href="/themeactivity.html?id=${data.id}" class="nav-dropdown__item">
+                <a href="themeactivity.html?id=${data.id}" class="nav-dropdown__item">
                     <img class="nav-dropdown__icon" src="./images/activityicon.png" alt="">
                     <p class="nav-dropdown__title">${data.title}</p>
                 </a>`;
+                phoneStrHtml += `
+                <a href="themeactivity.html?id=${data.id}" class="nav-mobile__activity-item">
+                    <img src="./images/activityicon.png" alt="">
+                    <p>${data.title}</p>
+                </a>`;
             })
             $('.nav-dropdown').html(strHtml);
+            $('.nav-mobile__activity-list').html(strHtml);
+
+            if (window.location.href.indexOf('themeactivity') !== -1) {
+                const id = new URLSearchParams(window.location.search).get('id');
+                const findData = response.find(function(data) {
+                    return data.id.toString() === id;
+                })
+        
+                $('.theme-box > h3').text(findData.title);
+                $('.theme-box > p').text(findData.content);
+                $('.theme-btn').attr('class',`theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}`);
+                $('.theme-btn').text(findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿'));
+            }
         }
     });
 

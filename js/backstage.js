@@ -379,7 +379,7 @@ $(document).ready(function () {
         function fromData() {
             return {
                 title: $(".input-value_videos").val(),
-                content: "https://www.youtube.com/embed/4j0Fgmsxr-o",
+                content: $(".input-label_videos > input").val(),
                 file: file,
             }
         }
@@ -400,7 +400,7 @@ $(document).ready(function () {
                 $(".input-value_videos").val(findData.title);
                 $(`.input-label_radio > input[value='${findData.status}']`).prop('checked', true);
     
-                if (findData.status) {
+                if (findData.status === '1') {
                     toggleStatus(false);
                     $(".input-label_videos > .input-value").val(findData.content);                
                 } else {
@@ -453,7 +453,7 @@ $(document).ready(function () {
             e.preventDefault();
             const data = fromData();
             data.status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : 1;
-            delete (data.status || !data.file) ? data.content : data.file;
+            (data.status === '1' || data.file !== undefined) ? delete data.content : delete data.file;
             data.method = selectId ? 'update' : 'new';
 
             if (selectId) {

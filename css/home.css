@@ -683,7 +683,7 @@
     line-height: 40px;
 }
 
-.theme-btn_null {
+.theme-btn_close {
     pointer-events: none;
     background-color: #c8c8c8;
 }
@@ -697,7 +697,7 @@
     opacity: .8;
 }
 
-.theme-btn_close {
+.theme-btn_null {
     background-color: #8d4646;
     color: #fff;
     pointer-events: none;

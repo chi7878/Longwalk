@@ -198,7 +198,13 @@ body, html {
 .nav-mobile__list {
     padding: 20px 10px;
     box-sizing: border-box;
+    height: calc(100vh - 80px);
 }
+
+.nav-mobile__list.os-theme-dark > .os-scrollbar-vertical {
+    width: 9px;
+}
+
 
 .nav-mobile__item {
     min-height: 50px;
@@ -261,9 +267,9 @@ body, html {
 }
 
 
-@media screen and (min-width: 992px)  and (max-width: 1280px) {
+@media screen and (min-width: 1057px)  and (max-width: 1280px) {
     .nav {
-        padding: 0 6%;
+        padding: 0;
     }
     
     .nav-scroll {
@@ -271,7 +277,7 @@ body, html {
     }
 }
 
-@media screen  and (min-width: 768px) and (max-width: 991px) {
+@media screen  and (min-width: 768px) and (max-width: 1056px) {
     .nav {
         padding: 0 6%;
         height: 80px;
