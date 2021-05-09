@@ -15,7 +15,7 @@
         <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item">
-                    <a href="index.html#news"  class="nav-item__btn">最新消息</a>
+                    <a class="nav-item__btn nav-item__btn_news">最新消息</a>
                 </li>
                 <li class="nav-item">
                     <a href="route.html" class="nav-item__btn">臺北大縱走7+1</a>
@@ -31,32 +31,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-item__btn nav-item__btn_dropdown">主題活動</a>
-                    <ul class="nav-dropdown">
-                        <li class="nav-dropdown__item">
-                            <img src="./images/activityicon.png" alt="">
-                            <p>昆蟲變身Ready GO!</p>
-                        </li>
-                        <li class="nav-dropdown__item">
-                            <img src="./images/activityicon.png" alt="">
-                            <p>前進．探索未知的火山</p>
-                        </li>
-                        <li class="nav-dropdown__item">
-                            <img src="./images/activityicon.png" alt="">
-                            <p>漫．攝．老地方</p>
-                        </li>
-                        <li class="nav-dropdown__item">
-                            <img src="./images/activityicon.png" alt="">
-                            <p>藝想世界野餐會</p>
-                        </li>
-                        <li class="nav-dropdown__item">
-                            <img src="./images/activityicon.png" alt="">
-                            <p>縱走之戀</p>
-                        </li>
-                        <li class="nav-dropdown__item">
-                            <img src="./images/activityicon.png" alt="">
-                            <p>百年指南宮千階步道</p>
-                        </li>
-                    </ul>
+                    <div class="nav-dropdown"></div>
                 </li>
                 <li class="nav-item">
                     <a href="related.html" class="nav-item__btn">旅。縱走</a>
@@ -72,7 +47,7 @@
                     </a>
                 </div>
                 <div class="nav-mobile__menu-btn">
-                    <a href="#" class="menu"><span></span></a>
+                    <a class="menu"><span></span></a>
                 </div>
                 <div class="nav-mobile__menu">
                     <ul class="nav-mobile__list">
@@ -80,13 +55,13 @@
                             <a class="nav-mobile__href">最新消息</a>
                         </li>
                         <li class="nav-mobile__item">
-                            <a class="nav-mobile__href">臺北大縱走7+1</a>
+                            <a href="route.html" class="nav-mobile__href">臺北大縱走7+1</a>
                         </li>
                         <li class="nav-mobile__item">
-                            <a class="nav-mobile__href nav-mobile__href_activity">年度活動<span class="">▲</span></a>
+                            <a class="nav-mobile__href nav-mobile__href_activity">年度活動<span class="nav-mobile__span">▲</span></a>
                         </li>
-                        <li class="nav-mobile__item nav-mobile__item_activity">
-                            <ul class="nav-mobile__activity-list">
+                        <li class="nav-mobile__item nav-mobile__item_activity" style="display: none;">
+                            <div class="nav-mobile__activity-list">
                                 <li class="nav-mobile__activity-item">
                                     <img src="./images/activityicon.png" alt="">
                                     <p>昆蟲變身Ready Go!</p>
@@ -111,13 +86,16 @@
                                     <img src="./images/activityicon.png" alt="">
                                     <p>百年指南宮千階步道</p>
                                 </li>
-                            </ul>
+                            </div>
                         </li>
                         <li class="nav-mobile__item">
-                            <a class="nav-mobile__href">主題活動</a>
+                            <a href="route.html" class="nav-mobile__href">旅。縱走</a>
                         </li>
                         <li class="nav-mobile__item">
-                            <a class="nav-mobile__href">影音專區</a>
+                            <a href="related.html" class="nav-mobile__href">主題活動</a>
+                        </li>
+                        <li class="nav-mobile__item">
+                            <a href="videos.html" class="nav-mobile__href">影音專區</a>
                         </li>
                     </ul>
                 </div>
