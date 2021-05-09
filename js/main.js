@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    const apiRoute = `https://taipeigrandtrail.travel.taipei`;
+
     $('.nav-item__btn_dropdown').click(function() {
         $('.nav-dropdown').toggle();
     })
@@ -18,6 +20,24 @@ $(document).ready(function () {
     });
 
     $(".news-list").overlayScrollbars({});
+
+    $.ajax({
+        type: "GET",
+        url: `${apiRoute}/api/activity`,
+        dataType: "json",
+        success: function (response) {
+            let strHtml = '';
+            response.forEach(function(data) {
+                console.log(data);
+                strHtml += `
+                <a href="/themeactivity.html?id=${data.id}" class="nav-dropdown__item">
+                    <img class="nav-dropdown__icon" src="./images/activityicon.png" alt="">
+                    <p class="nav-dropdown__title">${data.title}</p>
+                </a>`;
+            })
+            $('.nav-dropdown').html(strHtml);
+        }
+    });
 
     $(".info-carousel").slick({
         slidesToShow: 1,

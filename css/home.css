@@ -325,6 +325,7 @@
 
 .info-content-box > p{
     white-space: pre-wrap;
+    line-height: 30px;
 }
 
 .info-btn {

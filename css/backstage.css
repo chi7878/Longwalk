@@ -419,3 +419,14 @@ body {
     white-space: nowrap;
     height: 19px;
 }
+
+.login-out {
+    border-bottom: 1px solid #838383;
+    width: 80px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+    cursor: pointer;
+    color: #838383;
+    padding-bottom: 3px;
+}

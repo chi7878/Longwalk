@@ -47,6 +47,9 @@ p, h1, h2, h3, h4, a, li {
     color: #595757;
 }
 
+a {
+    text-decoration:none;
+}
 
 body, html {
     background-color: #f6eee1;
@@ -150,6 +153,7 @@ body, html {
     border-radius: 8px;
     display: none;
     width: 260px;
+    overflow: hidden;
 }
 
 .nav-dropdown__item {
@@ -159,7 +163,13 @@ body, html {
     display: flex;
     align-items: center;
     width: 100%;
+    box-sizing: border-box;
 }
+
+.nav-dropdown__item:hover {
+    background-color: #115159;
+}
+
 
 .nav-dropdown__item > img {
     width: 20px;

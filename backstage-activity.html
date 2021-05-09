@@ -31,51 +31,30 @@
     <article class="content">
         <h3 class="content-title">活動</h3>
         <div class="icon-btn__add">新增</div>
-        <ul class="content-list">
-            <li class="content-item">
-                <p class="content-item__title">昆蟲變身Ready GO!</p>
-                <div class="icon-btns">
-                    <div class="icon-btn icon-btn__edit">編輯</div>
-                    <div class="icon-btn">刪除</div>
-                </div>
-            </li>
-            <li class="content-item">
-                <p class="content-item__title">昆蟲變身Ready GO!</p>
-                <div class="icon-btns">
-                    <div class="icon-btn icon-btn__edit">編輯</div>
-                    <div class="icon-btn">刪除</div>
-                </div>            
-            </li>
-            <li class="content-item">
-                <p class="content-item__title">昆蟲變身Ready GO!</p>
-                <div class="icon-btns">
-                    <div class="icon-btn icon-btn__edit">編輯</div>
-                    <div class="icon-btn">刪除</div>
-                </div>            
-            </li>
-        </ul>
+        <ul class="content-list"></ul>
     </article>
+    <div class="login-out">登出</div>
     <article class="popup popup-hidden">
         <div class="popup-box">
             <h3>新增</h3>
             <div class="input-box input-box_activity">
                 <label class="input-label" for="title">
                     <p class="input-text">標題:</p>
-                    <input class="input-value" type="text" name="title" id="title">
+                    <input class="input-value input-value_title" type="text" name="title" id="title">
                 </label>
                 <label class="input-label" for="time">
                     <p class="input-text">時間:</p>
-                    <input class="input-value" type="text" name="time" id="time">
+                    <input class="input-value input-value_time" type="text" name="time" id="time">
                 </label>
                 <label class="input-label" for="place">
                     <p class="input-text">地點:</p>
-                    <input class="input-value" type="text" name="place" id="place">
+                    <input class="input-value input-value_place" type="text" name="place" id="place">
                 </label>
                 <label class="input-label" for="content">
                     <p class="input-text">內容:</p>
                     <textarea class="input-textarea" name="content" id="content"></textarea>
                 </label>
-                <label class="input-label" for="status">
+                <label class="input-label input-label_radio" for="status">
                     <input type="radio" name="status" value="0" checked>尚未開放
                     <input type="radio" name="status" value="1">活動報名
                     <input type="radio" name="status" value="2">報名額滿
@@ -83,7 +62,7 @@
             </div>
             <div class="popup-btns">
                 <div class="popup-btn popup-btn_close">取消</div>
-                <div class="popup-btn">新增</div>
+                <div class="popup-btn popup-btn_confirm">新增</div>
             </div>
             <div class="close-btn popup-btn_close"></div>
         </div>
