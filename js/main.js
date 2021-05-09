@@ -5,6 +5,11 @@ $(document).ready(function () {
         $('.nav-dropdown').toggle();
     })
 
+    $('.nav-mobile__item').click(function() {
+        $('.nav-dropdown').toggle();
+    })
+
+
     $(window).scroll(function (event) {
         if($(window).width() < 992) {
             return;
@@ -20,7 +25,7 @@ $(document).ready(function () {
     });
 
     $(".news-list").overlayScrollbars({});
-    $(".nav-mobile__list").overlayScrollbars({});
+    // $(".nav-mobile__menu").overlayScrollbars({});
 
     $.ajax({
         type: "GET",
