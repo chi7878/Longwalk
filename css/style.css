@@ -192,6 +192,14 @@ body, html {
     transition: all .5s;
 }
 
+.nav-mobile__menu-scrollbar {
+    height: calc(100vh - 80px);
+}
+
+.nav-mobile__menu-scrollbar.os-theme-dark > .os-scrollbar-vertical {
+    width: 9px;
+}
+
 .nav-mobile__menu_show {
     left: 0;
 }
@@ -202,9 +210,6 @@ body, html {
     height: calc(100vh - 80px);
 }
 
-.nav-mobile__list.os-theme-dark > .os-scrollbar-vertical {
-    width: 9px;
-}
 
 
 .nav-mobile__item {
