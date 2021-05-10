@@ -7,13 +7,7 @@ $(document).ready(function () {
         url: `${apiRoute}/api/news`,
         dataType: "json",
         success: function (response) {
-            newsList = response.map(item => {
-                const data = item;
-                data.title = '12312312';
-                data.date = '2020-12-12';
-                return data;
-            })
-
+            newsList = response.reverse();
             if (window.location.href.indexOf('newsInfo') !== -1) {
                 const id = new URLSearchParams(window.location.search).get('id');
                 const findData = newsList.find(function(data) {
@@ -21,7 +15,7 @@ $(document).ready(function () {
                 })
         
                 $('.info-content-title__info').text(findData.title);
-                $('.info-content-date__info').text(`發布日期：${findData.date}`);
+                $('.info-content-date__info').text(`發布日期：${findData.created_at.split(' ')[0]}`);
                 $('.info-content-box > p').text(findData.content);
             } else {
                 let strHtml = '';
@@ -30,7 +24,7 @@ $(document).ready(function () {
                     console.log(data);
                     strHtml += `
                     <li class="news-item" data-id="${data.id}">
-                        <p class="news-item__date">${data.date}</p>
+                        <p class="news-item__date">${data.created_at.split(' ')[0]}</p>
                         <p class="news-item__title" title="${data.title}">${data.title}</p>
                     </li>`;
                 })

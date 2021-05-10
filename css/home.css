@@ -46,6 +46,10 @@
     cursor: pointer;
 }
 
+.news-item:hover .news-item__title {
+    color: #115159;
+}
+
 .news-item__date {
     margin-bottom: 10px;
     font-size: 14px;

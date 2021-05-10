@@ -56,6 +56,9 @@ $(document).ready(function () {
     function newsFn() {
         let list =  [];
         let selectId = undefined;
+        let file = [];
+        let photoList = [];
+        let deleteId = [];
 
         getData();
 
@@ -65,13 +68,7 @@ $(document).ready(function () {
                 url: `${apiRoute}/api/news`,
                 dataType: "json",
                 success: function (response) {
-                    list = response.map(item => {
-                        const data = item;
-                        data.title = '12312312';
-                        data.date = '2020-12-12';
-                        return data;
-                    });
-
+                    list = response.reverse();
                     showData();
                     editEvent();
                     deleteEvent();
@@ -80,14 +77,25 @@ $(document).ready(function () {
         }
 
         function postData(data) {
+            let formData = new FormData();
+            Object.keys(data).forEach(item => {
+                if (item === 'file' || item === 'delete_ids') {
+                    data[item].forEach((file, i) => formData.append(`${item}[${i}]`, file))
+                } else {
+                    formData.append(item, data[item]);
+                }
+            })
+
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/news`,
                 dataType: "json",
+                contentType:false,
                 headers: {
-                    Authorization: `Bearer ${sessionStorage.getItem('token')}`
+                    Authorization: `Bearer ${sessionStorage.getItem('token')}`,
                 },
-                data: data,
+                data: formData,
+                processData:false,
                 success: function (response) {
                     $(".popup").addClass("popup-hidden");
                     selectId = undefined;
@@ -118,6 +126,10 @@ $(document).ready(function () {
         function restPopup() {
             $(".input-value").val('');
             $(".input-textarea").val('');
+            selectId = undefined;
+            file = [];
+            photoList = [];
+            deleteId = [];
         }
 
         function fromData() {
@@ -140,7 +152,48 @@ $(document).ready(function () {
                 selectId = findData.id
                 $(".input-value").val(findData.title);
                 $(".input-textarea").val(findData.content);
+                
+                $.ajax({
+                    type: "GET",
+                    url: `${apiRoute}/api/news_photos`,
+                    dataType: "json",
+                    data: {news_id: e.currentTarget.dataset.id},
+                    success: function (response) {
+                        photoList = response;
+                        showFileList();
+                    }
+                });
+            });
+        }
+
+        function showFileList() {
+            const list = photoList.concat(file);
+
+            let strHtml = "";
+            list.forEach(function (item) {
+                strHtml += `
+                <li class="file-item">
+                    <p>${!item.id ? item.name : item.content.split('/storage/news/')[1]}</p>
+                    <div class="file-delete" data-id="${!item.id ? -1 : item.id}"></div>
+                </li>`;
+            });
     
+            $(".file-list").html(strHtml);
+            deleteFile();
+        }
+
+        function deleteFile() {
+            $(".file-delete").click(function (e) {
+                if (e.currentTarget.dataset.id === '-1') {
+                    const index  = file.findIndex(ele => ele.name === $(e.currentTarget).prev().text());
+                    file.splice(index, 1);
+                } else {
+                    deleteId.push(e.currentTarget.dataset.id);
+                    const index  = photoList.findIndex(ele => ele.id.toString() === e.currentTarget.dataset.id);
+                    photoList.splice(index, 1);
+                }
+
+                showFileList();
             });
         }
 
@@ -154,24 +207,28 @@ $(document).ready(function () {
             });
         }
 
-        $('.icon-btn__add').click(function (e) { 
+        $('.icon-btn__add, .popup-btn_close').click(function (e) { 
             restPopup();
+        });
+
+        $('.input-file').change(function (e) { 
+            file.push(e.currentTarget.files[0]);
+            $(".input-file").val('');
+            showFileList();
         });
 
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
             const data = fromData();
             data.method = selectId ? 'update' : 'new';
+            data.file = file;
+            data.delete_ids = deleteId;
             
             if (selectId) {
                 data.id = selectId;
             }
 
             postData(data);
-        });
-
-        $(".popup-btn_close").click(function (e) {
-            selectId = undefined;
         });
     }
 
@@ -312,8 +369,6 @@ $(document).ready(function () {
     function videosFn() {
         let list = [];
         let file = undefined;
-        let selectId = undefined;
-
         getData();
 
         function getData() {
@@ -322,14 +377,8 @@ $(document).ready(function () {
                 url: `${apiRoute}/api/audio`,
                 dataType: "json",
                 success: function (response) {
-                    list = response.map(item => {
-                        const data = item;
-                        data.title = '12312312';
-                        return data;
-                    });
-
+                    list = response.reverse();
                     showData();
-                    editEvent();
                     deleteEvent();
                 }
             });
@@ -343,7 +392,6 @@ $(document).ready(function () {
                 <li class="content-item">
                     <p class="content-item__title">${item.title}</p>
                     <div class="icon-btns">
-                        <div class="icon-btn icon-btn__edit" data-id="${item.id}">編輯</div>
                         <div class="icon-btn icon-btn__delete" data-id="${item.id}">刪除</div>
                     </div>
                 </li>
@@ -384,35 +432,8 @@ $(document).ready(function () {
             }
         }
 
-        function editEvent() {
-            $(".icon-btn__edit").click(function (e) {
-                e.preventDefault();
-    
-                if (!list.find(item => item.id.toString() === e.currentTarget.dataset.id)) {
-                    return;
-                }
-    
-                $(".popup").removeClass("popup-hidden");
-                $(".popup-box > h3,.popup-btn_confirm").text("編輯");
-                restPopup();
-                const findData = JSON.parse(JSON.stringify(list.find(item => item.id.toString() === e.currentTarget.dataset.id)));
-                selectId = findData.id
-                $(".input-value_videos").val(findData.title);
-                $(`.input-label_radio > input[value='${findData.status}']`).prop('checked', true);
-    
-                if (findData.status === '1') {
-                    toggleStatus(false);
-                    $(".input-label_videos > .input-value").val(findData.content);                
-                } else {
-                    toggleStatus(true);
-                    changeFileName(findData.content);
-                }
-            });
-        }
-
         function deleteEvent() {
             $(".icon-btn__delete").click(function (e) {
-                
                 $.ajax({
                     type: "PUT",
                     url: `${apiRoute}/api/audio`,
@@ -425,7 +446,6 @@ $(document).ready(function () {
                     },
                     success: function (response) {
                         $(".popup").addClass("popup-hidden");
-                        selectId = undefined;
                         getData();
                     }
                 });
@@ -445,21 +465,16 @@ $(document).ready(function () {
 
         $('.input-file').change(function (e) { 
             file = e.currentTarget.files[0];
+            $(".input-file").val('');
             changeFileName(file.name);
-            console.log(file);
         });
 
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
             const data = fromData();
             data.status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : 1;
-            (data.status === '1' || data.file !== undefined) ? delete data.content : delete data.file;
-            data.method = selectId ? 'update' : 'new';
-
-            if (selectId) {
-                data.id = selectId;
-            }
-
+            data.status === 0 ? delete data.content : delete data.file;
+            data.method = 'new';
             let formData = new FormData();
             Object.keys(data).forEach(item => {
                 formData.append(item, data[item]);
@@ -477,14 +492,9 @@ $(document).ready(function () {
                 processData:false,
                 success: function (response) {
                     $(".popup").addClass("popup-hidden");
-                    selectId = undefined;
                     getData();
                 }
             });
-        });
-
-        $(".popup-btn_close").click(function (e) {
-            selectId = undefined;
         });
     }
 });

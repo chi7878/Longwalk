@@ -7,11 +7,7 @@ $(document).ready(function () {
         url: `${apiRoute}/api/audio`,
         dataType: "json",
         success: function (response) {
-            newsList = response.map(item => {
-                const data = item;
-                data.title = '12312312';
-                return data;
-            })
+            newsList = response.reverse();
             let strHtml = '';
                 
             newsList.forEach(function(data) {
