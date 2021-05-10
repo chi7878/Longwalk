@@ -85,21 +85,19 @@ $(document).ready(function () {
             $('.nav-dropdown').hide();
         }
     });
+    
+    $('.box').hide();
 
-    $('.map-path').hover(function (event) {
-            console.log(event);
+    $('.map-box').mouseover(function(event) {
+        if (['box', 'related-text', 'related-btn'].includes(event.target.className)) {
             $('.box').show();
-            const position = $(event.currentTarget).position();
+        } else if (event.target.nodeName === 'path') {
+            $('.box').show();
+            const position = $(event.target).position();
             $('.box').attr('style', `top: ${position.top - 200}px;left:${position.left}px`);
-        }, function (event) {
-            $('.box').hide();
         }
-    );
-
-    $('.box').hover(function (event) {
-            $('.box').show();
-        }, function (event) {
-            $('.box').hide();
-        }
-    );
+            
+    }).mouseout(function (event) {
+        $('.box').hide();
+    });
 });
