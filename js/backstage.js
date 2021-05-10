@@ -1,5 +1,6 @@
 $(document).ready(function () {
     const apiRoute = `https://taipeigrandtrail.travel.taipei`;
+    $(".popup-box").overlayScrollbars({});
 
     $(".icon-btn__add").click(function (e) {
         e.preventDefault();
@@ -130,6 +131,7 @@ $(document).ready(function () {
             file = [];
             photoList = [];
             deleteId = [];
+            $(".file-list").html('');
         }
 
         function fromData() {
@@ -235,6 +237,9 @@ $(document).ready(function () {
     function activityFn() {
         let list =  [];
         let selectId = undefined;
+        let file = [];
+        let photoList = [];
+        let deleteId = [];
 
         getData();
 
@@ -261,14 +266,25 @@ $(document).ready(function () {
 
         
         function postData(data) {
+            let formData = new FormData();
+            Object.keys(data).forEach(item => {
+                if (item === 'file' || item === 'delete_ids') {
+                    data[item].forEach((file, i) => formData.append(`${item}[${i}]`, file))
+                } else {
+                    formData.append(item, data[item]);
+                }
+            })
+
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/activity`,
                 dataType: "json",
+                contentType:false,
                 headers: {
-                    Authorization: `Bearer ${sessionStorage.getItem('token')}`
+                    Authorization: `Bearer ${sessionStorage.getItem('token')}`,
                 },
-                data: data,
+                data: formData,
+                processData:false,
                 success: function (response) {
                     $(".popup").addClass("popup-hidden");
                     selectId = undefined;
@@ -301,12 +317,17 @@ $(document).ready(function () {
             $(".input-value_place").val('');
             $(".input-textarea").val('');
             $(`.input-label_radio > input[value='0']`).prop('checked', true);
+            selectId = undefined;
+            file = [];
+            photoList = [];
+            deleteId = [];
+            $(".file-list").html('');
         }
 
         function fromData() {
             return {
                 title: $(".input-value_title").val(),
-                time: $(".input-value_time").val(),
+                start_time: $(".input-value_time").val(),
                 place: $(".input-value_place").val(),
                 content: $(".input-textarea").val(),
                 status: $(`.input-label_radio > input[value='0']`)[0].checked ? 0 :
@@ -332,6 +353,48 @@ $(document).ready(function () {
                 $(".input-value_place").val(findData.place);
                 $(".input-textarea").val(findData.content);
                 $(`.input-label_radio > input[value='${findData.status}']`).prop('checked', true);
+
+                $.ajax({
+                    type: "GET",
+                    url: `${apiRoute}/api/activity_photos`,
+                    dataType: "json",
+                    data: {activity_id: e.currentTarget.dataset.id},
+                    success: function (response) {
+                        photoList = response;
+                        showFileList();
+                    }
+                });
+            });
+        }
+
+        function showFileList() {
+            const list = photoList.concat(file);
+
+            let strHtml = "";
+            list.forEach(function (item) {
+                strHtml += `
+                <li class="file-item">
+                    <p>${!item.id ? item.name : item.content.split('/storage/activity/')[1]}</p>
+                    <div class="file-delete" data-id="${!item.id ? -1 : item.id}"></div>
+                </li>`;
+            });
+    
+            $(".file-list").html(strHtml);
+            deleteFile();
+        }
+
+        function deleteFile() {
+            $(".file-delete").click(function (e) {
+                if (e.currentTarget.dataset.id === '-1') {
+                    const index  = file.findIndex(ele => ele.name === $(e.currentTarget).prev().text());
+                    file.splice(index, 1);
+                } else {
+                    deleteId.push(e.currentTarget.dataset.id);
+                    const index  = photoList.findIndex(ele => ele.id.toString() === e.currentTarget.dataset.id);
+                    photoList.splice(index, 1);
+                }
+
+                showFileList();
             });
         }
 
@@ -345,24 +408,28 @@ $(document).ready(function () {
             });
         }
 
-        $('.icon-btn__add').click(function (e) { 
+        $('.icon-btn__add, .popup-btn_close').click(function (e) { 
             restPopup();
+        });
+
+        $('.input-file').change(function (e) { 
+            file.push(e.currentTarget.files[0]);
+            $(".input-file").val('');
+            showFileList();
         });
 
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
             const data = fromData();
             data.method = selectId ? 'update' : 'new';
+            data.file = file;
+            data.delete_ids = deleteId;
             
             if (selectId) {
                 data.id = selectId;
             }
 
             postData(data);
-        });
-
-        $(".popup-btn_close").click(function (e) {
-            selectId = undefined;
         });
     }    
 
@@ -392,6 +459,7 @@ $(document).ready(function () {
                 <li class="content-item">
                     <p class="content-item__title">${item.title}</p>
                     <div class="icon-btns">
+                        <div class="icon-btn" style="display:none">編輯</div>
                         <div class="icon-btn icon-btn__delete" data-id="${item.id}">刪除</div>
                     </div>
                 </li>

@@ -427,10 +427,11 @@ body, html {
 
 .menu {
 	position: relative;
-	display:  inline-block;
+	display: inline-block;
 	width: 30px;
 	height: 30px;
 	margin: 25px;
+    cursor: pointer;
 }
 .menu span {
 	margin: 0 auto;
@@ -482,4 +483,8 @@ body, html {
 	margin-top: 0;
 	-webkit-transform: rotate(-45deg); transform: rotate(-45deg);
 	-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;
+}
+
+.main {
+    margin-top: 120px;
 }
