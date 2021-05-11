@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
     const id = new URLSearchParams(window.location.search).get('id');
     let list =  [
         {   
@@ -84,6 +85,10 @@ $(document).ready(function () {
 
     ];
     const data = list.find(item => item.id.toString() === id);
+    if(!data) {
+        window.location.href =  `${path}/index.html`;
+        return;
+    }
     $('.main_relared-info > h1').text(data.title);
     $('.main').append(`
     <style>

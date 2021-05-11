@@ -12,11 +12,14 @@ $(document).ready(function () {
     $(".news-list").overlayScrollbars({});
     $(".nav-mobile__menu-scrollbar").overlayScrollbars({});
 
+    const id = new URLSearchParams(window.location.search).get('id');
+
     $.ajax({
         type: "GET",
         url: `${apiRoute}/api/activity`,
         dataType: "json",
         success: function (response) {
+            const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
             let strHtml = '';
             let phoneStrHtml = '';
             response.forEach(function(data) {
@@ -34,8 +37,7 @@ $(document).ready(function () {
             $('.nav-dropdown').html(strHtml);
             $('.nav-mobile__activity-list').html(strHtml);
 
-            if (window.location.href.indexOf('themeactivity') !== -1) {
-                const id = new URLSearchParams(window.location.search).get('id');
+            if (window.location.href.indexOf('themeactivity') !== -1 && id !== null) {
                 const findData = response.find(function(data) {
                     return data.id.toString() === id;
                 })
@@ -46,9 +48,33 @@ $(document).ready(function () {
                 $('.theme-date__item:nth-child(2) > p').text(findData.end_time);
                 $('.theme-btn').attr('class',`theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}`);
                 $('.theme-btn').text(findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿'));
+            } else if (window.location.href.indexOf('themeactivity') !== -1 && id === null) {
+                window.location.href =  `${path}/index.html`;
             }
         }
     });
+
+    if (window.location.href.indexOf('themeactivity') !== -1 && id !== null) { 
+        $.ajax({
+            type: "GET",
+            url: `${apiRoute}/api/activity_photos`,
+            dataType: "json",
+            data: {activity_id: id},
+            success: function (response) {
+                let strHtml = '';
+                response.forEach(item => {
+                    strHtml += `
+                    <div class="info-carousel__link">
+                        <div class="info-carousel__wrapper">
+                            <img src="${item.content}" alt="carousel image">
+                        </div>
+                    </div> 
+                    `
+                });
+                $('.info-carousel').html(strHtml);
+            }
+        });
+    }
 
     $(".info-carousel").slick({
         slidesToShow: 1,

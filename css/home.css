@@ -228,8 +228,6 @@
 
 .info-carousel__link {
     outline: none;
-    margin: 0 10px;
-    cursor: pointer;
 }
 
 .info-carousel__img {
@@ -1029,7 +1027,8 @@
 .main_relared-info {
     display: flex;
     flex-direction: column;
-    align-items: center;    
+    align-items: center;   
+    padding-top: 130px;
 }
 
 .main_relared-info > h1 {
@@ -1057,10 +1056,19 @@
     right: 0;
 }
 
+.main_relared-info > article {
+    width: 100%;
+}
+
+.main_relared-info > article:not(:nth-child(2)) {
+    padding-top: 80px;
+}
+
 .relared-info__box {
     border-radius: 16px;
     border: 1px solid #C37E7A;
     width: 80%;
+    margin: 0 auto;
     min-height: 200px;
     background-color: #fff;
     padding: 25px 15px;
