@@ -740,10 +740,11 @@
 
 .theme-date__item {
     position: relative;
-    height: 45px;
+    display: flex;
+    align-items: center;
+    min-height: 45px;
     padding: 10px 0;
 }
-
 
 .theme-date__item::before {
     content: '';
@@ -767,7 +768,7 @@
 }
 
 .theme-date__item > p {
-    line-height: 45px;
+    line-height: 2  5px;
     margin-left: 50px;
 }
 
@@ -1107,6 +1108,20 @@
     cursor: pointer;
     border-bottom: 1px solid #C37E7A;
     color: #C37E7A;
+}
+
+.alert-title {
+    width: 90%;
+    margin: 0 auto;
+    text-align: right;
+    font-size: 14px;
+    display: none;
+}
+
+@media screen and (max-width: 996px) {
+    .alert-title {
+        display: block;
+    }
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {

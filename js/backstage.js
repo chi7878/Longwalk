@@ -420,7 +420,6 @@ $(document).ready(function () {
 
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
-            console.log(e);
             const data = fromData();
             data.method = selectId ? 'update' : 'new';
             data.file = file;

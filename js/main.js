@@ -88,39 +88,48 @@ $(document).ready(function () {
         }
     });
 
-    let relatedData = [
-        {title: '第一段', color: '#c37e7a', position: {top: 1, left: 5}},
-        {title: '第二段', color: '#d0935b', position: {top: 1, left: 0}},
-        {title: '第三段', color: '#79adb1', position: {top: 6, left: 3}},
-        {title: '第四段', color: '#967796', position: {top: -14, left: 10}},
-        {title: '第五段', color: '#d4c2c9', position: {top: -12, left: 6}},
-        {title: '第六段', color: '#9eb382', position: {top: 22, left: 7}},
-        {title: '第七段', color: '#dfdd84', position: {top: -3, left: 0}},
-        {title: '第八段', color: '#b6cbd4', position: {top: 22, left: 9}}
-    ]
-    
     $('.box').hide();
-    $('.map-box').mouseover(function(event) {
-        if (['box', 'related-text', 'related-btn'].includes(event.target.className)) {
-            $('.box').show();
-        } else if (event.target.nodeName === 'path') {
-            const data = relatedData[parseInt(event.target.dataset.id, 10) - 1];
-            $('.related-text').text(data.title);
-            $('.related-btn').each(function(index) {
-                $(this).css("background-color", data.color);
-                $(this).attr("href", 
-                `relatedinfo.html?id=${event.target.dataset.id}#${index === 0 ? 'shop' : (index === 1 ? 'travel' : 'attractions') }`);
-            });
-            $('.box').show();
-            const dataPosition = $(event.target).position();
-            function percentage(position) {
-                return dataPosition[position]/(position === 'top' ? $(document).height() : $(document).width()) * 100;
+    if ($(document).width() <= 996) {
+        $('.map-path').click(function (e) { 
+            e.preventDefault();
+            const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
+            window.location.href =  `${path}/relatedinfo.html?id=${e.currentTarget.dataset.id}`;
+        });
+    } else {
+        let relatedData = [
+            {title: '第一段', color: '#c37e7a', position: {top: 1, left: 5}},
+            {title: '第二段', color: '#d0935b', position: {top: 1, left: 0}},
+            {title: '第三段', color: '#79adb1', position: {top: 6, left: 3}},
+            {title: '第四段', color: '#967796', position: {top: -14, left: 10}},
+            {title: '第五段', color: '#d4c2c9', position: {top: -12, left: 6}},
+            {title: '第六段', color: '#9eb382', position: {top: 22, left: 7}},
+            {title: '第七段', color: '#dfdd84', position: {top: -3, left: 0}},
+            {title: '第八段', color: '#b6cbd4', position: {top: 22, left: 9}}
+        ]
+        
+        $('.map-box').mouseover(function(event) {
+            if (['box', 'related-text', 'related-btn'].includes(event.target.className)) {
+                $('.box').show();
+            } else if (event.target.nodeName === 'path') {
+                const data = relatedData[parseInt(event.target.dataset.id, 10) - 1];
+                $('.related-text').text(data.title);
+                $('.related-btn').each(function(index) {
+                    $(this).css("background-color", data.color);
+                    $(this).attr("href", 
+                    `relatedinfo.html?id=${event.target.dataset.id}#${index === 0 ? 'shop' : (index === 1 ? 'travel' : 'attractions') }`);
+                });
+                $('.box').show();
+                const dataPosition = $(event.target).position();
+                function percentage(position) {
+                    return dataPosition[position]/(position === 'top' ? $(document).height() : $(document).width()) * 100;
+                }
+    
+                $('.box').attr('style', `top: ${percentage('top') + data.position.top}%;left:${percentage('left') + data.position.left}%`);
             }
+                
+        }).mouseout(function (event) {
+            $('.box').hide();
+        });
+    }
 
-            $('.box').attr('style', `top: ${percentage('top') + data.position.top}%;left:${percentage('left') + data.position.left}%`);
-        }
-            
-    }).mouseout(function (event) {
-        $('.box').hide();
-    });
 });

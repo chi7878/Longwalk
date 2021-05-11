@@ -17,7 +17,6 @@ $(document).ready(function () {
                     $('.error-text').text('帳號或密碼錯誤!!')
                 } else {
                     sessionStorage.setItem('token', response.token)
-                    console.log(response.token);
                     const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
                     window.location.href =  `${path}/backstage-news.html`;
                 }

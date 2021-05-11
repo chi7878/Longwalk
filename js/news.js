@@ -21,7 +21,6 @@ $(document).ready(function () {
                 let strHtml = '';
                 
                 newsList.forEach(function(data) {
-                    console.log(data);
                     strHtml += `
                     <li class="news-item" data-id="${data.id}">
                         <p class="news-item__date">${data.created_at.split(' ')[0]}</p>

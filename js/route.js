@@ -84,7 +84,6 @@ $(document).ready(function () {
     ];
     const id = new URLSearchParams(window.location.search).get('id');
     const data = list.find(item => item.id.toString() === id);
-    console.log(data);
     $('.info-content-box > h3').text(data.title);
     $('.info-content-box > p').text(data.content);
     let strHtml = '';

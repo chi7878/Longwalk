@@ -11,7 +11,6 @@ $(document).ready(function () {
             let strHtml = '';
                 
             newsList.forEach(function(data) {
-                console.log(data);
                 strHtml += `
                 <li class="videos-item">
                     <div class="videos-item__video">
