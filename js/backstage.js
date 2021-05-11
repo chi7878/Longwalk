@@ -249,14 +249,7 @@ $(document).ready(function () {
                 url: `${apiRoute}/api/activity`,
                 dataType: "json",
                 success: function (response) {
-                    list = response.map(item => {
-                        const data = item;
-                        data.time = '2021-05-05';
-                        data.place = '富士山';
-
-                        return data;
-                    });
-
+                    list = response.reverse();
                     showData();
                     editEvent();
                     deleteEvent();
@@ -315,6 +308,7 @@ $(document).ready(function () {
             $(".input-value_title").val('');
             $(".input-value_time").val('');
             $(".input-value_place").val('');
+            $(".input-value_apply").val('');
             $(".input-textarea").val('');
             $(`.input-label_radio > input[value='0']`).prop('checked', true);
             selectId = undefined;
@@ -330,6 +324,7 @@ $(document).ready(function () {
                 start_time: $(".input-value_time").val(),
                 end_time: $(".input-value_place").val(),
                 content: $(".input-textarea").val(),
+                url: $(".input-value_apply").val(),
                 status: $(`.input-label_radio > input[value='0']`)[0].checked ? 0 :
                     ($(`.input-label_radio > input[value='1']`)[0].checked ? 1 : 2)
             }
@@ -351,6 +346,7 @@ $(document).ready(function () {
                 $(".input-value_title").val(findData.title);
                 $(".input-value_time").val(findData.start_time);
                 $(".input-value_place").val(findData.end_time);
+                $(".input-value_apply").val(findData.url);
                 $(".input-textarea").val(findData.content);
                 $(`.input-label_radio > input[value='${findData.status}']`).prop('checked', true);
 

@@ -145,7 +145,7 @@ $(document).ready(function () {
                     `relatedinfo.html?id=${event.target.dataset.id}#${index === 0 ? 'shop' : (index === 1 ? 'travel' : 'attractions') }`);
                 });
                 $('.box').show();
-                const dataPosition = $(event.target).position();
+                const dataPosition = event.target.getBoundingClientRect();
                 function percentage(position) {
                     return dataPosition[position]/(position === 'top' ? $(document).height() : $(document).width()) * 100;
                 }
