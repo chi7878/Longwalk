@@ -328,10 +328,10 @@ $(document).ready(function () {
             return {
                 title: $(".input-value_title").val(),
                 start_time: $(".input-value_time").val(),
-                place: $(".input-value_place").val(),
+                end_time: $(".input-value_place").val(),
                 content: $(".input-textarea").val(),
                 status: $(`.input-label_radio > input[value='0']`)[0].checked ? 0 :
-                    ($(`.input-label_radio > input[value='1']`)[0].checked ? 1 : 0)
+                    ($(`.input-label_radio > input[value='1']`)[0].checked ? 1 : 2)
             }
         }
 
@@ -349,8 +349,8 @@ $(document).ready(function () {
                 const findData = JSON.parse(JSON.stringify(list.find(item => item.id.toString() === e.currentTarget.dataset.id)));
                 selectId = findData.id;
                 $(".input-value_title").val(findData.title);
-                $(".input-value_time").val(findData.time);
-                $(".input-value_place").val(findData.place);
+                $(".input-value_time").val(findData.start_time);
+                $(".input-value_place").val(findData.end_time);
                 $(".input-textarea").val(findData.content);
                 $(`.input-label_radio > input[value='${findData.status}']`).prop('checked', true);
 
@@ -420,6 +420,7 @@ $(document).ready(function () {
 
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
+            console.log(e);
             const data = fromData();
             data.method = selectId ? 'update' : 'new';
             data.file = file;

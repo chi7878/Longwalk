@@ -1148,3 +1148,7 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
+.related-btn:hover {
+    opacity: .8;
+}

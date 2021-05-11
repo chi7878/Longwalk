@@ -42,6 +42,8 @@ $(document).ready(function () {
         
                 $('.theme-box > h3').text(findData.title);
                 $('.theme-box > p').text(findData.content);
+                $('.theme-date__item:nth-child(1) > p').text(findData.start_time);
+                $('.theme-date__item:nth-child(2) > p').text(findData.end_time);
                 $('.theme-btn').attr('class',`theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}`);
                 $('.theme-btn').text(findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿'));
             }
@@ -85,16 +87,37 @@ $(document).ready(function () {
             $('.nav-dropdown').hide();
         }
     });
+
+    let relatedData = [
+        {title: '第一段', color: '#c37e7a', position: {top: 1, left: 5}},
+        {title: '第二段', color: '#d0935b', position: {top: 1, left: 0}},
+        {title: '第三段', color: '#79adb1', position: {top: 6, left: 3}},
+        {title: '第四段', color: '#967796', position: {top: -14, left: 10}},
+        {title: '第五段', color: '#d4c2c9', position: {top: -12, left: 6}},
+        {title: '第六段', color: '#9eb382', position: {top: 22, left: 7}},
+        {title: '第七段', color: '#dfdd84', position: {top: -3, left: 0}},
+        {title: '第八段', color: '#b6cbd4', position: {top: 22, left: 9}}
+    ]
     
     $('.box').hide();
-
     $('.map-box').mouseover(function(event) {
         if (['box', 'related-text', 'related-btn'].includes(event.target.className)) {
             $('.box').show();
         } else if (event.target.nodeName === 'path') {
+            const data = relatedData[parseInt(event.target.dataset.id, 10) - 1];
+            $('.related-text').text(data.title);
+            $('.related-btn').each(function(index) {
+                $(this).css("background-color", data.color);
+                $(this).attr("href", 
+                `relatedinfo.html?id=${event.target.dataset.id}#${index === 0 ? 'shop' : (index === 1 ? 'travel' : 'attractions') }`);
+            });
             $('.box').show();
-            const position = $(event.target).position();
-            $('.box').attr('style', `top: ${position.top - 200}px;left:${position.left}px`);
+            const dataPosition = $(event.target).position();
+            function percentage(position) {
+                return dataPosition[position]/(position === 'top' ? $(document).height() : $(document).width()) * 100;
+            }
+
+            $('.box').attr('style', `top: ${percentage('top') + data.position.top}%;left:${percentage('left') + data.position.left}%`);
         }
             
     }).mouseout(function (event) {
