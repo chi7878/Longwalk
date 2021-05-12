@@ -1030,7 +1030,7 @@
 }
 
 .box {
-    position: absolute;
+    position: fixed;
     top:  10px;
     height: 30px;
     width: 160px;

@@ -48,7 +48,6 @@ $(document).ready(function () {
                 $('.theme-date__item:nth-child(2) > p').text(findData.end_time);
                 $('.theme-btn').attr('class',`theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}`);
                 $('.theme-btn').text(findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿'));
-                $('.theme-btn').attr('href', findData.url);
             } else if (window.location.href.indexOf('themeactivity') !== -1 && id === null) {
                 window.location.href =  `${path}/index.html`;
             }
@@ -62,54 +61,36 @@ $(document).ready(function () {
             dataType: "json",
             data: {activity_id: id},
             success: function (response) {
-                if(response.length === 0) {
-                    $('.info-carousel-box').hide();
-                    return;
-                }
-
                 let strHtml = '';
                 response.forEach(item => {
                     strHtml += `
                     <div class="info-carousel__link">
                         <div class="info-carousel__wrapper">
-                            <img src="${apiRoute}/api/activity_photo?model=activity&file_name=${item.content.split('/storage/activity/')[1]}" alt="carousel image">
+                            <img src="${item.content}" alt="carousel image">
                         </div>
                     </div> 
                     `
                 });
                 $('.info-carousel').html(strHtml);
-
-                $(".info-carousel").slick({
-                    pauseOnFocus: false,
-                    dots: true,
-                    prevArrow: `<button type="button" class="prev-button carousel-button">Previous
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg>
-                    </button>`,
-                    nextArrow: `<button type="button" class="next-button carousel-button">Next
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg>
-                    </button>`,
-                    dotsClass: `dots-item`,
-                    focusOnSelect: true,
-                });
             }
         });
     }
 
-    if (window.location.href.indexOf('newsInfo') === -1 && window.location.href.indexOf('themeactivity') === -1) {
-        $(".info-carousel").slick({
-            pauseOnFocus: false,
-            dots: true,
-            prevArrow: `<button type="button" class="prev-button carousel-button">Previous
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg>
-            </button>`,
-            nextArrow: `<button type="button" class="next-button carousel-button">Next
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg>
-            </button>`,
-            dotsClass: `dots-item`,
-            focusOnSelect: true,
-        });
-    }
-
+    $(".info-carousel").slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnFocus: false,
+        dots: true,
+        centerMode: true,
+        prevArrow: `<button type="button" class="prev-button carousel-button">Previous
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg>
+        </button>`,
+        nextArrow: `<button type="button" class="next-button carousel-button">Next
+        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-right" class="svg-inline--fa fa-chevron-circle-right fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M256 8c137 0 248 111 248 248S393 504 256 504 8 393 8 256 119 8 256 8zm113.9 231L234.4 103.5c-9.4-9.4-24.6-9.4-33.9 0l-17 17c-9.4 9.4-9.4 24.6 0 33.9L285.1 256 183.5 357.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L369.9 273c9.4-9.4 9.4-24.6 0-34z"></path></svg>
+        </button>`,
+        dotsClass: `dots-item`,
+        focusOnSelect: true,
+    });
 
     $('.nav-item__btn_news').click(function() {
         $('html,body').animate({scrollTop: $('#news').offset().top}, 500);
@@ -142,14 +123,14 @@ $(document).ready(function () {
         });
     } else {
         let relatedData = [
-            {title: '第一段', color: '#c37e7a', position: {top: 330, left: 842}},
-            {title: '第二段', color: '#d0935b', position: {top: 350, left: 1050}},
-            {title: '第三段', color: '#79adb1', position: {top: 426, left: 1174}},
-            {title: '第四段', color: '#967796', position: {top: 309, left: 1148}},
-            {title: '第五段', color: '#d4c2c9', position: {top: 303, left: 928}},
-            {title: '第六段', color: '#9eb382', position: {top: 920, left: 783}},
-            {title: '第七段', color: '#dfdd84', position: {top: 715, left: 615}},
-            {title: '第八段', color: '#b6cbd4', position: {top: 640, left: 611}}
+            {title: '第一段', color: '#c37e7a', position: {top: 54, left: 5}},
+            {title: '第二段', color: '#d0935b', position: {top: 55, left: 0}},
+            {title: '第三段', color: '#79adb1', position: {top: 72, left: -4}},
+            {title: '第四段', color: '#967796', position: {top: 38, left: 3}},
+            {title: '第五段', color: '#d4c2c9', position: {top: 37, left: -11}},
+            {title: '第六段', color: '#9eb382', position: {top: 90, left: -4}},
+            {title: '第七段', color: '#dfdd84', position: {top: -54, left: -3}},
+            {title: '第八段', color: '#b6cbd4', position: {top: 62, left: 0}}
         ]
         
         $('.map-box').mouseover(function(event) {
@@ -163,16 +144,18 @@ $(document).ready(function () {
                     $(this).attr("href", 
                     `relatedinfo.html?id=${event.target.dataset.id}#${index === 0 ? 'shop' : (index === 1 ? 'travel' : 'attractions') }`);
                 });
-
-                console.log(event);
-
                 $('.box').show();
-                $('.box').attr('style', 
-                `top: ${data.position.top}px;left:${data.position.left}px`);
+                const dataPosition = event.target.getBoundingClientRect();
+                console.log(dataPosition, $(document).width());
+                function percentage(position) {
+                    return dataPosition[position]/(position === 'y' ? $(document).height() : $(document).width()) * 100;
+                }
+    
+                $('.box').attr('style', `top: ${dataPosition.y + data.position.top}px;left:${percentage('x') + data.position.left}%`);
             }
                 
         }).mouseout(function (event) {
-            $('.box').hide();
+            // $('.box').hide();
         });
     }
 
