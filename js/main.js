@@ -61,6 +61,9 @@ $(document).ready(function () {
             dataType: "json",
             data: {activity_id: id},
             success: function (response) {
+                if (response.length === 0) {
+                    $('.info-carousel').hide();
+                }
                 let strHtml = '';
                 response.forEach(item => {
                     strHtml += `
@@ -143,7 +146,7 @@ $(document).ready(function () {
         let relatedData = [
             {title: '第一段', color: '#c37e7a', position: {top: 200, left: 500}},
             {title: '第二段', color: '#d0935b', position: {top: 200, left: 650}},
-            {title: '第三段', color: '#79adb1', position: {top: 250, left: 700}},
+            {title: '第三段', color: '#79adb1', position: {top: 250, left: 700}}, 
             {title: '第四段', color: '#967796', position: {top: 200, left: 680}},
             {title: '第五段', color: '#d4c2c9', position: {top: 180, left: 580}},
             {title: '第六段', color: '#9eb382', position: {top: 380, left: 460}},
