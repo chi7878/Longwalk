@@ -47,10 +47,14 @@ $(document).ready(function () {
             break;
     }
 
+    function returnLogin() {
+        const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
+        window.location.href =  `${path}/backstage-login.html`;
+    }
+
     function loginStatus() {
         if (!sessionStorage.getItem('token')) {
-            const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
-            window.location.href =  `${path}/backstage-login.html`;
+            returnLogin();
         }
     }
 
@@ -98,9 +102,13 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
-                    $(".popup").addClass("popup-hidden");
-                    selectId = undefined;
-                    getData();
+                    if (response.message && response.message === '驗證失效') {
+                        returnLogin();       
+                    } else {
+                        $(".popup").addClass("popup-hidden");
+                        selectId = undefined;
+                        getData();
+                    }
                 }
             });
         }
@@ -132,13 +140,6 @@ $(document).ready(function () {
             photoList = [];
             deleteId = [];
             $(".file-list").html('');
-        }
-
-        function fromData() {
-            return {
-                title: $(".input-value").val(),
-                content: $(".input-textarea").val(),
-            }
         }
 
         function editEvent() {
@@ -221,10 +222,13 @@ $(document).ready(function () {
 
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
-            const data = fromData();
-            data.method = selectId ? 'update' : 'new';
-            data.file = file;
-            data.delete_ids = deleteId;
+            const data = {
+                title: $(".input-value").val(),
+                content: $(".input-textarea").val(),
+                method: selectId ? 'update' : 'new',
+                file: file,
+                delete_ids: deleteId
+            };
             
             if (selectId) {
                 data.id = selectId;
@@ -279,9 +283,14 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
-                    $(".popup").addClass("popup-hidden");
-                    selectId = undefined;
-                    getData();
+                    if (response.message && response.message === '驗證失效') {
+                        returnLogin();        
+                    } else {
+                        $(".popup").addClass("popup-hidden");
+                        selectId = undefined;
+                        getData();
+                    }
+                    
                 }
             });
         }
@@ -396,10 +405,7 @@ $(document).ready(function () {
 
         function deleteEvent() {
             $(".icon-btn__delete").click(function (e) {
-                const data = {
-                    id: e.currentTarget.dataset.id,
-                    method: 'delete'
-                }
+                const data = {id: e.currentTarget.dataset.id,method: 'delete'};
                 postData(data);
             });
         }
@@ -540,9 +546,7 @@ $(document).ready(function () {
             data.status === 0 ? delete data.content : delete data.file;
             data.method = 'new';
             let formData = new FormData();
-            Object.keys(data).forEach(item => {
-                formData.append(item, data[item]);
-            })
+            Object.keys(data).forEach(item => formData.append(item, data[item]))
             
             $.ajax({
                 type: "POST",
@@ -555,8 +559,12 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
-                    $(".popup").addClass("popup-hidden");
-                    getData();
+                    if (response.message && response.message === '驗證失效') {
+                        returnLogin();        
+                    } else { 
+                        $(".popup").addClass("popup-hidden");
+                        getData();
+                    }
                 }
             });
         });

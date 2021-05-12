@@ -310,12 +310,20 @@
 .info-carousel__wrapper {
     position: relative;
     overflow: hidden;
+    height: 500px;
 }
 
 .info-carousel__wrapper> img {
-    position: relative;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
-    max-width: 100%;
+    width: 100%;
+}
+
+.dots-item > .slick-active >  button{
+    background-color: #468D80;
 }
 
 .slick-list {
@@ -898,6 +906,16 @@
 
 .videos-item > p {
     margin-top: 10px;
+}
+
+.videos-item__img {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.videos-item__img > img {
+    width: 100%;
 }
 
 .videos-item__video {

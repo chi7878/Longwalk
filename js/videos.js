@@ -7,14 +7,22 @@ $(document).ready(function () {
         url: `${apiRoute}/api/audio`,
         dataType: "json",
         success: function (response) {
-            newsList = response.reverse();
+            list = response.reverse();
             let strHtml = '';
                 
-            newsList.forEach(function(data) {
+            list.forEach(function(data) {
+                let content = '';
+
+                if (data.status === '1') {
+                    content = `<iframe src="${data.content}" frameborder="0" allowfullscreen class="video"></iframe>`
+                } else {
+                    content = `<img src="${apiRoute}/api/activity_photo?model=audio&file_name=${data.content.split('/storage/audio/')[1]}" alt="">`
+                }
+
                 strHtml += `
                 <li class="videos-item">
-                    <div class="videos-item__video">
-                        <iframe src="${data.content}" frameborder="0" allowfullscreen class="video"></iframe>
+                    <div class="videos-item__${data.status === '1' ? 'video' : 'img'}">
+                        ${content}
                     </div>                    
                     <p>${data.title}</p>
                 </li>`;
