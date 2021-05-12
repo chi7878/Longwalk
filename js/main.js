@@ -164,6 +164,8 @@ $(document).ready(function () {
                     `relatedinfo.html?id=${event.target.dataset.id}#${index === 0 ? 'shop' : (index === 1 ? 'travel' : 'attractions') }`);
                 });
 
+                console.log(event);
+
                 $('.box').show();
                 $('.box').attr('style', 
                 `top: ${data.position.top}px;left:${data.position.left}px`);
