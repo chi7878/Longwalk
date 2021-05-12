@@ -67,8 +67,6 @@ $(document).ready(function () {
                 $('.info-carousel').html(strHtml);
 
                 $(".info-carousel").slick({
-                    variableWidth: true,
-                    centerMode: true,
                     pauseOnFocus: false,
                     dots: true,
                     prevArrow: `<button type="button" class="prev-button carousel-button">Previous
