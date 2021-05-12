@@ -127,8 +127,13 @@ $(document).ready(function () {
         }
     });
 
-    $('.box').hide();
-    if ($(document).width() <= 996) {
+    // $(window).scroll(function() {
+    //     $('.box').hide();
+    // });
+
+    $('.box-svg').hide();
+    if ($(document).width() <= 1056) {
+        $('.alert-title').show();
         $('.map-path').click(function (e) { 
             e.preventDefault();
             const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
@@ -136,39 +141,44 @@ $(document).ready(function () {
         });
     } else {
         let relatedData = [
-            {title: '第一段', color: '#c37e7a', position: {top: 54, left: 5}},
-            {title: '第二段', color: '#d0935b', position: {top: 55, left: 0}},
-            {title: '第三段', color: '#79adb1', position: {top: 72, left: -4}},
-            {title: '第四段', color: '#967796', position: {top: 38, left: 3}},
-            {title: '第五段', color: '#d4c2c9', position: {top: 37, left: -11}},
-            {title: '第六段', color: '#9eb382', position: {top: 90, left: -4}},
-            {title: '第七段', color: '#dfdd84', position: {top: -54, left: -3}},
-            {title: '第八段', color: '#b6cbd4', position: {top: 62, left: 0}}
+            {title: '第一段', color: '#c37e7a', position: {top: 200, left: 500}},
+            {title: '第二段', color: '#d0935b', position: {top: 200, left: 650}},
+            {title: '第三段', color: '#79adb1', position: {top: 250, left: 700}},
+            {title: '第四段', color: '#967796', position: {top: 200, left: 680}},
+            {title: '第五段', color: '#d4c2c9', position: {top: 180, left: 580}},
+            {title: '第六段', color: '#9eb382', position: {top: 380, left: 460}},
+            {title: '第七段', color: '#dfdd84', position: {top: 450, left: 360}},
+            {title: '第八段', color: '#b6cbd4', position: {top: 360, left: 380}}
         ]
-        
         $('.map-box').mouseover(function(event) {
-            if (['box', 'related-text', 'related-btn'].includes(event.target.className)) {
-                $('.box').show();
+            if ( ['box-svg', 'bg-svg', 'text-svg', 'content-svg'].includes(event.target.className.baseVal) ) {
+                $('.box-svg').show();
             } else if (event.target.nodeName === 'path') {
                 const data = relatedData[parseInt(event.target.dataset.id, 10) - 1];
-                $('.related-text').text(data.title);
-                $('.related-btn').each(function(index) {
-                    $(this).css("background-color", data.color);
+                $('.box-svg').show();
+                $('.bg-svg').css('fill', data.color);
+                $('.title-svg').text(data.title);
+                $('.btn-svg').each(function(index) {
                     $(this).attr("href", 
                     `relatedinfo.html?id=${event.target.dataset.id}#${index === 0 ? 'shop' : (index === 1 ? 'travel' : 'attractions') }`);
                 });
-                $('.box').show();
-                const dataPosition = event.target.getBoundingClientRect();
-                console.log(dataPosition, $(document).width());
-                function percentage(position) {
-                    return dataPosition[position]/(position === 'y' ? $(document).height() : $(document).width()) * 100;
-                }
-    
-                $('.box').attr('style', `top: ${dataPosition.y + data.position.top}px;left:${percentage('x') + data.position.left}%`);
+
+                $('.content-svg').attr({x: data.position.left, y: data.position.top});
+                $('.title-svg').attr({x: data.position.left + 30, y: data.position.top + 20});
+                $('.btn-svg').each(function(index) {
+                    $(this).children('.bg-svg').attr({x: data.position.left + 12, y: data.position.top + ((index + 1) * 32)});
+                    $(this).children('.text-svg').attr({
+                        x: data.position.left + (index === 1 ? 24 : 28), 
+                        y: data.position.top + (index === 0 ? 45 :(index === 1 ? 76 : 108 ))
+                    });
+
+                });
             }
                 
         }).mouseout(function (event) {
-            // $('.box').hide();
+            if (!['box-svg', 'bg-svg', 'text-svg', 'content-svg'].includes(event.target.className.baseVal)) {
+                $('.box-svg').hide();
+            }
         });
     }
 

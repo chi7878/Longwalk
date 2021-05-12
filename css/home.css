@@ -1042,7 +1042,7 @@
 }
 
 .box {
-    position: fixed;
+    position: absolute;
     top:  10px;
     height: 30px;
     width: 160px;
@@ -1216,3 +1216,22 @@
     margin-bottom: 0;
     object-fit: cover;
 }
+
+.title-svg {
+    font:  12px 'Noto Sans TC';
+    fill: #575757;
+}
+
+.text-svg {
+    font:  10px 'Noto Sans TC';
+    fill: #fff;
+}
+
+.btn-svg {
+    cursor: pointer;
+}
+
+.btn-svg:hover>.bg-svg {
+    opacity: .8;
+}
+
