@@ -90,11 +90,8 @@ $(document).ready(function () {
         return;
     }
     $('.main_relared-info > h1').text(data.title);
-    $('.main').append(`
-    <style>
-    .main_relared-info > h1:before{background-color: ${data.color}}
-    .main_relared-info > h1:after{background-color: ${data.color}}
-    </style>`)
+    console.log($('.main'));
+    $('body').append(`<style>.main_relared-info > h1:before{background-color: ${data.color}}.main_relared-info > h1:after{background-color: ${data.color}}</style>`)
     $('.relared-info__img').css('background-color', data.color);
     $('.relared-info__box').css('border-color', data.color);
     $('.relared-info__btn').css('border-color', data.color);

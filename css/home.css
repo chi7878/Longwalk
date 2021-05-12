@@ -435,6 +435,10 @@
         height: 30px;
     }
 
+    .info-carousel__wrapper {
+        height: 400px;
+    }
+
     .info-list {
         flex-direction: column;
     }
@@ -452,6 +456,10 @@
 
     .slick-dotted.slick-slider {
         margin-bottom: 15px;
+    }
+
+    .info-carousel__wrapper {
+        height: 300px;
     }
 
     .carousel-button {
@@ -495,6 +503,10 @@
     .carousel-button {
         width: 30px;
         height: 30px;
+    }
+
+    .info-carousel__wrapper {
+        height: 200px;
     }
 
     .info-list__list {
@@ -1192,4 +1204,15 @@
 
 .related-btn:hover {
     opacity: .8;
+}
+
+.slick-track
+{
+    display: flex !important;
+}
+
+.slick-slide
+{
+    margin-bottom: 0;
+    object-fit: cover;
 }
