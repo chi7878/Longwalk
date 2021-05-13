@@ -6,7 +6,10 @@ $(document).ready(function () {
     });
 
     $('.nav-mobile__list > .nav-mobile__item:not(:nth-child(4))').click(function() {
-        setTimeout(() => $('.nav-mobile__menu').removeClass('nav-mobile__menu_show'), 0);
+        setTimeout(() =>{ 
+            $('.nav-mobile__menu').removeClass('nav-mobile__menu_show');
+            $('.menu').removeClass( "menu__active" );
+        }, 0);
     });
 
     $(".news-list").overlayScrollbars({});
