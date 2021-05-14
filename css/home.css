@@ -372,6 +372,10 @@
     line-height: 30px;
 }
 
+.info-content-box_news > p {
+    text-align: left;
+}
+
 .info-list {
     width: 100%;
     display: flex;

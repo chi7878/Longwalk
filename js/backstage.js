@@ -16,6 +16,8 @@ $(document).ready(function () {
         $(".popup").addClass("popup-hidden");
     });
 
+    $('.error-popup__box > p:nth-child(2)').hide();
+
     $('.login-out').click(function (e) { 
         e.preventDefault();
         $.ajax({
@@ -91,6 +93,7 @@ $(document).ready(function () {
                 }
             })
 
+            $('.loading-popup').show();
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/news`,
@@ -102,6 +105,7 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
+                    $('.loading-popup').hide();
                     if (response.message && response.message === '驗證失效') {
                         returnLogin();       
                     } else {
@@ -109,6 +113,10 @@ $(document).ready(function () {
                         selectId = undefined;
                         getData();
                     }
+                },
+                error: function() {
+                    $('.error-popup__box > p:nth-child(2)').show();
+                    $('.loading-popup').hide();
                 }
             });
         }
@@ -272,6 +280,7 @@ $(document).ready(function () {
                 }
             })
 
+            $('.loading-popup').show();
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/activity`,
@@ -283,6 +292,7 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
+                    $('.loading-popup').hide();
                     if (response.message && response.message === '驗證失效') {
                         returnLogin();        
                     } else {
@@ -290,7 +300,10 @@ $(document).ready(function () {
                         selectId = undefined;
                         getData();
                     }
-                    
+                },
+                error: function() {
+                    $('.error-popup__box > p:nth-child(2)').show();
+                    $('.loading-popup').hide();
                 }
             });
         }
@@ -504,6 +517,7 @@ $(document).ready(function () {
 
         function deleteEvent() {
             $(".icon-btn__delete").click(function (e) {
+                $('.loading-popup').show();
                 $.ajax({
                     type: "PUT",
                     url: `${apiRoute}/api/audio`,
@@ -515,8 +529,17 @@ $(document).ready(function () {
                         id: e.currentTarget.dataset.id,
                     },
                     success: function (response) {
-                        $(".popup").addClass("popup-hidden");
-                        getData();
+                        $('.loading-popup').hide();
+                        if (response.message && response.message === '驗證失效') {
+                            returnLogin();       
+                        } else {
+                            $(".popup").addClass("popup-hidden");
+                            getData();
+                        }
+                    },
+                    error: function() {
+                        $('.error-popup__box > p:nth-child(2)').show();
+                        $('.loading-popup').hide();
                     }
                 });
             });
@@ -548,6 +571,7 @@ $(document).ready(function () {
             let formData = new FormData();
             Object.keys(data).forEach(item => formData.append(item, data[item]))
             
+            $('.loading-popup').show();
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/audio`,
@@ -559,12 +583,18 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
+                    $('.loading-popup').hide();
+
                     if (response.message && response.message === '驗證失效') {
                         returnLogin();        
                     } else { 
                         $(".popup").addClass("popup-hidden");
                         getData();
                     }
+                },
+                error: function() {
+                    $('.error-popup__box > p:nth-child(2)').show();
+                    $('.loading-popup').hide();
                 }
             });
         });
