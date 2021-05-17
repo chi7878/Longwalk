@@ -16,6 +16,8 @@ $(document).ready(function () {
         $(".popup").addClass("popup-hidden");
     });
 
+    $('.error-popup__box > p:nth-child(2)').hide();
+
     $('.login-out').click(function (e) { 
         e.preventDefault();
         $.ajax({
@@ -91,6 +93,7 @@ $(document).ready(function () {
                 }
             })
 
+            $('.loading-popup').show();
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/news`,
@@ -102,6 +105,7 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
+                    $('.loading-popup').hide();
                     if (response.message && response.message === '驗證失效') {
                         returnLogin();       
                     } else {
@@ -109,6 +113,10 @@ $(document).ready(function () {
                         selectId = undefined;
                         getData();
                     }
+                },
+                error: function() {
+                    $('.error-popup__box > p:nth-child(2)').show();
+                    $('.loading-popup').hide();
                 }
             });
         }
@@ -134,6 +142,7 @@ $(document).ready(function () {
 
         function restPopup() {
             $(".input-value").val('');
+            $(".input-value_date").val('');
             $(".input-textarea").val('');
             selectId = undefined;
             file = [];
@@ -152,8 +161,9 @@ $(document).ready(function () {
                 $(".popup-box > h3,.popup-btn_confirm").text("編輯");
                 restPopup();
                 const findData = JSON.parse(JSON.stringify(list.find(item => item.id.toString() === e.currentTarget.dataset.id)));
-                selectId = findData.id
+                selectId = findData.id;
                 $(".input-value").val(findData.title);
+                $(".input-value_date").val(findData.edited_at.split(' ')[0]);
                 $(".input-textarea").val(findData.content);
                 
                 $.ajax({
@@ -224,6 +234,7 @@ $(document).ready(function () {
             e.preventDefault();
             const data = {
                 title: $(".input-value").val(),
+                edited_at: $(".input-value_date").val(),
                 content: $(".input-textarea").val(),
                 method: selectId ? 'update' : 'new',
                 file: file,
@@ -272,6 +283,7 @@ $(document).ready(function () {
                 }
             })
 
+            $('.loading-popup').show();
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/activity`,
@@ -283,6 +295,7 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
+                    $('.loading-popup').hide();
                     if (response.message && response.message === '驗證失效') {
                         returnLogin();        
                     } else {
@@ -290,7 +303,10 @@ $(document).ready(function () {
                         selectId = undefined;
                         getData();
                     }
-                    
+                },
+                error: function() {
+                    $('.error-popup__box > p:nth-child(2)').show();
+                    $('.loading-popup').hide();
                 }
             });
         }
@@ -438,6 +454,7 @@ $(document).ready(function () {
     function videosFn() {
         let list = [];
         let file = undefined;
+        let selectData = undefined;
         getData();
 
         function getData() {
@@ -449,6 +466,7 @@ $(document).ready(function () {
                     list = response.reverse();
                     showData();
                     deleteEvent();
+                    editEvent();
                 }
             });
         }
@@ -461,7 +479,7 @@ $(document).ready(function () {
                 <li class="content-item">
                     <p class="content-item__title">${item.title}</p>
                     <div class="icon-btns">
-                        <div class="icon-btn" style="display:none">編輯</div>
+                        <div class="icon-btn icon-btn__edit" data-id="${item.id}">編輯</div>
                         <div class="icon-btn icon-btn__delete" data-id="${item.id}">刪除</div>
                     </div>
                 </li>
@@ -469,6 +487,32 @@ $(document).ready(function () {
             });
     
             $(".content-list").html(strHtml);
+        }
+
+        function editEvent() {
+            $(".icon-btn__edit").click(function (e) {
+                if (!list.find(item => item.id.toString() === e.currentTarget.dataset.id)) {
+                    return;
+                }
+    
+                $(".popup").removeClass("popup-hidden");
+                $(".popup-box > h3,.popup-btn_confirm").text("編輯");
+                restPopup();
+                const findData = JSON.parse(JSON.stringify(list.find(item => item.id.toString() === e.currentTarget.dataset.id)));
+                selectData = findData;
+                $(".input-value_videos").val(findData.title);
+                $(`.input-label_radio > input[value='${findData.status}']`).prop('checked', true);
+
+
+                if (findData.status === '0') {
+                    toggleStatus(true);
+                    $('.input-file__text').text(findData.content.split('/storage/audio/')[1]);
+                    $('.input-file__text').attr('data-name', findData.content);
+                } else {
+                    toggleStatus(false);
+                    $('.input-label_videos > input').val(findData.content);
+                }
+            });
         }
 
         function changeFileName(text) {
@@ -492,18 +536,20 @@ $(document).ready(function () {
             changeFileName('選擇檔案');
             $(".input-label_videos > .input-value").val("");
             $(".input-file").val('');
+            file = undefined;
+            selectData = undefined;
         }
 
         function fromData() {
             return {
                 title: $(".input-value_videos").val(),
-                content: $(".input-label_videos > input").val(),
                 file: file,
             }
         }
 
         function deleteEvent() {
             $(".icon-btn__delete").click(function (e) {
+                $('.loading-popup').show();
                 $.ajax({
                     type: "PUT",
                     url: `${apiRoute}/api/audio`,
@@ -515,8 +561,17 @@ $(document).ready(function () {
                         id: e.currentTarget.dataset.id,
                     },
                     success: function (response) {
-                        $(".popup").addClass("popup-hidden");
-                        getData();
+                        $('.loading-popup').hide();
+                        if (response.message && response.message === '驗證失效') {
+                            returnLogin();       
+                        } else {
+                            $(".popup").addClass("popup-hidden");
+                            getData();
+                        }
+                    },
+                    error: function() {
+                        $('.error-popup__box > p:nth-child(2)').show();
+                        $('.loading-popup').hide();
                     }
                 });
             });
@@ -531,6 +586,7 @@ $(document).ready(function () {
         $('.input-label_radio > input[name="status"]').change(function (e) {
             e.preventDefault();
             toggleStatus(e.currentTarget.value === '0');
+            console.log(123)
         });
 
         $('.input-file').change(function (e) { 
@@ -543,11 +599,22 @@ $(document).ready(function () {
             e.preventDefault();
             const data = fromData();
             data.status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : 1;
-            data.status === 0 ? delete data.content : delete data.file;
-            data.method = 'new';
+            data.content = data.status === 0 ? $(".input-file__text")[0].dataset.name : $(".input-label_videos > input").val();
+            data.status === 0 && file !== undefined ? delete data.content : delete data.file;
+            data.method =  selectData !== undefined ? 'update' : 'new';
+
+            if (data.method === 'update' && file === undefined) {
+                delete data.file;
+            }
+
+            if (data.method === 'update') {
+                data.id = selectData.id;
+            }
+
             let formData = new FormData();
             Object.keys(data).forEach(item => formData.append(item, data[item]))
             
+            $('.loading-popup').show();
             $.ajax({
                 type: "POST",
                 url: `${apiRoute}/api/audio`,
@@ -559,12 +626,19 @@ $(document).ready(function () {
                 data: formData,
                 processData:false,
                 success: function (response) {
+                    $('.loading-popup').hide();
+
                     if (response.message && response.message === '驗證失效') {
                         returnLogin();        
                     } else { 
                         $(".popup").addClass("popup-hidden");
                         getData();
+                        restPopup();
                     }
+                },
+                error: function() {
+                    $('.error-popup__box > p:nth-child(2)').show();
+                    $('.loading-popup').hide();
                 }
             });
         });
