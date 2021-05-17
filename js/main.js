@@ -19,7 +19,7 @@ $(document).ready(function () {
 
     $.ajax({
         type: "GET",
-        url: `${apiRoute}/api/activity`,
+        url: `${apiRoute}/api/activity`, 
         dataType: "json",
         success: function (response) {
             const path = location.href.replace(/\\/g,'/').replace(/\/[^\/]*$/, '');
