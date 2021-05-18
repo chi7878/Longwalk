@@ -20,7 +20,7 @@ $(document).ready(function () {
         
                 $('.info-content-title__info').text(findData.title);
                 $('.info-content-date__info').text(`發布日期：${findData.edited_at.split(' ')[0]}`);
-                $('.info-content-box > p').text(findData.content);
+                $('.info-content-box > p').html(findData.content);
             } else {
                 let strHtml = '';
                 

@@ -376,6 +376,11 @@
     text-align: left;
 }
 
+.info-content-box_news a {
+    text-decoration: underline;
+    color: #468d80;
+}
+
 .info-list {
     width: 100%;
     display: flex;
@@ -990,6 +995,10 @@
     position: relative;
 }
 
+.map-box_mobile {
+    display: none;
+}
+
 .map-box > img {
     width: 100%;
     height: auto;
@@ -1239,3 +1248,22 @@
     opacity: .8;
 }
 
+.making-box {
+    min-height: 400px;
+}
+
+.making-box > p {
+    text-align: center;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+@media screen and (max-width: 1056px) {
+    .map-box_mobile {
+        display: block;
+    }
+
+    .map-box_show {
+        display: none;
+    }
+}
