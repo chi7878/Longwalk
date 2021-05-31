@@ -96,4 +96,41 @@ $(document).ready(function () {
     $('.relared-info__box').css('border-color', data.color);
     $('.relared-info__btn').css('border-color', data.color);
     $('.relared-info__btn').css('color', data.color);
+
+    $.getJSON( "../relatedData.json", function( data ) {
+        if (!id) return
+        const findData = data.find(item => item.id.toString() === id);
+        console.log(findData);
+        let strHtml = '';
+                
+        findData.shop.forEach(function(data) {
+            const phone = data.cellphone.map(item => `<li>${item}</li>`).join('');
+            
+
+            strHtml += `
+            <div class="relared-info__list">
+                <a href="${data.href}" class="relared-info__list-title" target="_blank">📍${data.name}</a>
+                <div class="relared-info__list-content">
+                    <p>優惠內容:</p>
+                    <p>${data.content}</p>
+                </div>
+                <div class="relared-info__list-content">
+                    <p>地址:</p>
+                    <p>${data.address}</p>
+                </div>
+                <div class="relared-info__list-content">
+                    <p>聯絡電話:</p>
+                    <ul>
+                    ${phone}
+                    </ul>
+                </div>
+            </div>`;
+        })
+    
+        $('.relared-info-shop').html(strHtml);
+
+        
+
+
+      });
 });

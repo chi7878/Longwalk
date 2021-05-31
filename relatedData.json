@@ -1,0 +1,386 @@
+[
+  {
+    "id": 2,
+    "shop": [
+      {
+        "name": "發現生活園藝",
+        "href": "https://8898go.com/fashia/",
+        "cellphone": ["02-2862-7898", "0932-137-123"],
+        "address": "竹子湖路35-1號",
+        "content": "來店消費用餐送炸地瓜1份"
+      },
+      {
+        "name": "木珍園",
+        "href": "https://www.facebook.com/%E7%AB%B9%E5%AD%90%E6%B9%96%E6%9C%A8%E7%8F%8D%E5%9C%92%E9%87%8E%E8%8F%9C%E9%A4%90%E5%BB%B3-138211799603992/",
+        "cellphone": ["02-2862-2223", "0955-333-432"],
+        "address": "竹子湖路33-5號",
+        "content": "來來店消費用餐送季節性炒青菜1份"
+      },
+      {
+        "name": "竹子湖故鄉海芋餐廳",
+        "href": "https://lihi1.com/qU7Ct",
+        "cellphone": ["02-2861-5736", "0919-931-239"],
+        "address": "竹子湖路海芋大道上",
+        "content": "來店消費用餐送地瓜湯1份"
+      },
+      {
+        "name": "山水香",
+        "href": "https://maps.app.goo.gl/FqeaWTucKRV8Bccx6",
+        "cellphone": ["02-2861-8828"],
+        "address": "竹子湖路33-5號(海芋大道前段)",
+        "content": "來店消費滿500元送甜湯1份"
+      },
+      {
+        "name": "苗榜",
+        "href": "https://8898go.com/miauban/",
+        "cellphone": ["02-2861-5419"],
+        "address": "竹子湖路56-7號",
+        "content": "來店消費滿1000元送手工小饅頭1份"
+      },
+      {
+        "name": "媽媽味",
+        "href": "https://www.facebook.com/%E9%99%BD%E6%98%8E%E5%B1%B1%E7%AB%B9%E5%AD%90%E6%B9%96%E5%AA%BD%E5%AA%BD%E5%91%B3-880059985425834/",
+        "cellphone": ["02-2862-3343"],
+        "address": "竹子湖路51號旁",
+        "content": "來店消費滿1000元送季節時蔬1份"
+      },
+      {
+        "name": "湖田大樹下",
+        "href": "https://maps.app.goo.gl/qaZUiuDPUzUg9jWS8",
+        "cellphone": ["02-2861-8789", "0972-175-388"],
+        "address": "湖田橋右轉直走右手邊",
+        "content": "來店消費滿2500元送地瓜湯和小饅頭1份"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "shop": [
+      {
+        "name": "白石湖森活休閒農場",
+        "href": "http://www.whiterockfarm.com.tw/",
+        "cellphone": ["02-2794-3131", "0989-784-932"],
+        "address": "台北市內湖區碧山路58號",
+        "content": "憑台北大縱走紀錄，餐飲、下午茶、蔬果9折優惠"
+      },
+      {
+        "name": "野草花果有機農場",
+        "href": "https://web.hocom.tw/h/index?key=913628698512",
+        "cellphone": ["0975-638-765"],
+        "address": "台北市內湖區碧山路38號",
+        "content": "打卡消費9折優惠"
+      },
+      {
+        "name": "美麗田農園",
+        "href": "https://www.facebook.com/StrawberryFarmer/",
+        "cellphone": ["0910-147-097"],
+        "address": "台北市內湖區碧山路58-1號",
+        "content": "消費滿千9折優惠"
+      },
+      {
+        "name": "橋頭美食坊",
+        "href": "https://www.recreational-agriculture.taipei/News_Content.aspx?n=FF9ADA213AC3C574&sms=67DE5D1497D24589&s=26BA90596F40EAC0",
+        "cellphone": ["0936-121-826"],
+        "address": "台北市內湖區碧山路26-1號",
+        "content": "消費滿千送當季熱炒蔬菜一份"
+      },
+      {
+        "name": "莓圃觀光休閒果園",
+        "href": "https://www.facebook.com/s.gardencoffee/",
+        "cellphone": ["02-2795-1108"],
+        "address": "台北市內湖區碧山路38-2號",
+        "content": "憑台北大縱走紀錄9折優惠"
+      },
+      {
+        "name": "東林休閒農園",
+        "href": "https://www.facebook.com/kpp70500i/",
+        "cellphone": ["0936-303-178", "0953-934-999"],
+        "address": "台北市內湖區碧山路43之18號",
+        "content": "現場購買蜂蜜一律8折來,電訂購蜂蜜宅配9折"
+      },
+      {
+        "name": "coco32咖啡棧",
+        "href": "https://www.facebook.com/coco32coco",
+        "cellphone": ["02-2796-7393"],
+        "address": "台北市內湖區碧山路32號",
+        "content": "用餐打卡消費9折優惠"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "shop": [
+      {
+        "name": "白石湖森活休閒農場",
+        "href": "http://www.whiterockfarm.com.tw/",
+        "cellphone": ["02-2794-3131", "0989-784-932"],
+        "address": "台北市內湖區碧山路58號",
+        "content": "憑台北大縱走紀錄，餐飲、下午茶、蔬果9折優惠"
+      },
+      {
+        "name": "野草花果有機農場",
+        "href": "https://web.hocom.tw/h/index?key=913628698512",
+        "cellphone": ["0975-638-765"],
+        "address": "台北市內湖區碧山路38號",
+        "content": "打卡消費9折優惠"
+      },
+      {
+        "name": "美麗田農園",
+        "href": "https://www.facebook.com/StrawberryFarmer/",
+        "cellphone": ["0910-147-097"],
+        "address": "台北市內湖區碧山路58-1號",
+        "content": "消費滿千9折優惠"
+      },
+      {
+        "name": "橋頭美食坊",
+        "href": "https://www.recreational-agriculture.taipei/News_Content.aspx?n=FF9ADA213AC3C574&sms=67DE5D1497D24589&s=26BA90596F40EAC0",
+        "cellphone": ["0936-121-826"],
+        "address": "台北市內湖區碧山路26-1號",
+        "content": "消費滿千送當季熱炒蔬菜一份"
+      },
+      {
+        "name": "莓圃觀光休閒果園",
+        "href": "https://www.facebook.com/s.gardencoffee/",
+        "cellphone": ["02-2795-1108"],
+        "address": "台北市內湖區碧山路38-2號",
+        "content": "憑台北大縱走紀錄9折優惠"
+      },
+      {
+        "name": "東林休閒農園",
+        "href": "https://www.facebook.com/kpp70500i/",
+        "cellphone": ["0936-303-178", "0953-934-999"],
+        "address": "台北市內湖區碧山路43之18號",
+        "content": "現場購買蜂蜜一律8折來,電訂購蜂蜜宅配9折"
+      },
+      {
+        "name": "coco32咖啡棧",
+        "href": "https://www.facebook.com/coco32coco",
+        "cellphone": ["02-2796-7393"],
+        "address": "台北市內湖區碧山路32號",
+        "content": "用餐打卡消費9折優惠"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "shop": [
+      {
+        "name": "威叔茶莊",
+        "href": "http://taiwan-tea.tw",
+        "cellphone": ["0933-219-509"],
+        "address": "台北市文山區指南路三段40巷36號",
+        "content": "有機茶、安心茶享9折優惠"
+      },
+      {
+        "name": "龍芽茶坊",
+        "href": "https://www.facebook.com/taipei.maokong/",
+        "cellphone": [" 02-2234-4593"],
+        "address": "台北市文山區指南路三段40巷24之2號",
+        "content": "店內消費滿888並在FB或IG打卡分享即贈送蒸籠點心或手工綠豆糕乙份"
+      },
+      {
+        "name": "寒舍茶坊",
+        "href": "https://www.facebook.com/MaokongHanser/",
+        "cellphone": ["02-2938-4934"],
+        "address": "台北市文山區指南路三段40巷6號",
+        "content": "有機觀音茶9折優惠、茶水費9折優待"
+      },
+      {
+        "name": "邀月茶坊",
+        "href": "http://www.yytea.com.tw/",
+        "cellphone": ["02-2939-2025"],
+        "address": "台北市文山區指南路三段40巷6號",
+        "content": "泡茶85折優惠"
+      },
+      {
+        "name": "相逢居",
+        "href": "https://www.facebook.com/my0921939783/",
+        "cellphone": ["02-2939-6509"],
+        "address": "台北市文山區指南路三段40巷12號",
+        "content": "用餐或泡茶，不限金額9折優惠"
+      },
+      {
+        "name": "金盆茶園",
+        "href": "https://www.facebook.com/teagoldbasin/",
+        "cellphone": ["0958-515-253"],
+        "address": "台北市文山區指南路三段40巷12-1號",
+        "content": "消費滿千贈送鐵觀音原粒茶包乙盒"
+      },
+      {
+        "name": "晨曦茶坊",
+        "href": "https://www.facebook.com/%E6%99%A8%E6%9B%A6%E8%8C%B6%E5%9D%8A-125438204197611/",
+        "cellphone": ["02-2936-4336"],
+        "address": "台北市文山區指南路三段34巷53號",
+        "content": "泡茶消費滿千即贈送茶點心乙份、泡茶8人同行1人免費"
+      },
+      {
+        "name": "六季香茶坊",
+        "href": "https://www.facebook.com/liujixiangteahouse/",
+        "cellphone": [" 02-2936-4371"],
+        "address": "台北市文山區指南路三段34巷53號之1",
+        "content": "滿千即贈送精美鐵觀音紅茶小禮包乙包"
+      },
+      {
+        "name": "春茶鄉",
+        "href": "https://www.facebook.com/%E8%B2%93%E7%A9%BA%E6%98%A5%E8%8C%B6%E9%84%89-151162904968433/",
+        "cellphone": [" 02-2939-0559"],
+        "address": "台北市文山區指南路三段38巷30號",
+        "content": "用餐消費滿千贈送時蔬乙份"
+      },
+      {
+        "name": "蘭姐青草粿",
+        "href": "https://www.facebook.com/%E8%B2%93%E7%A9%BA%E8%98%AD%E5%A7%90%E9%9D%92%E8%8D%89%E7%B2%BF-558216047539261/?ref=page_internal",
+        "cellphone": ["02-2939-8088"],
+        "address": "台北市文山區指南路三段34巷47號 之 1號",
+        "content": "草仔粿買10送1、打卡按讚送紅茶包2包"
+      },
+      {
+        "name": "貓空茶屋",
+        "href": "https://www.facebook.com/maokongteahouse/",
+        "cellphone": ["02-2936-6066"],
+        "address": "台北市文山區指南路三段38巷16-8號",
+        "content": "喵喵霜淇淋第2支8折"
+      },
+      {
+        "name": "貓空暘臺",
+        "href": "https://www.facebook.com/MaokongBalcony/",
+        "cellphone": [" 02- 2937-0189"],
+        "address": "台北市文山區指南路三段38巷16-4號",
+        "content": "消費滿千贈送手工鐵觀音冰淇淋1支"
+      },
+      {
+        "name": "光羽塩",
+        "href": "http://www.lytea.com.tw/news.html",
+        "cellphone": ["02-2939-4050"],
+        "address": "台北市文山區指南路三段38巷14之2號",
+        "content": "每人消費滿250元即贈送鐵觀音茶凍乙份(價值35元，每人每日現贈乙份)"
+      },
+      {
+        "name": "鴻智茶場",
+        "href": "https://www.facebook.com/Taipei.Tieguanyin/",
+        "cellphone": ["02-2939-0419"],
+        "address": "台北市文山區指南路三段38巷21號",
+        "content": "消費滿千即贈送茶樣乙份"
+      },
+      {
+        "name": "美加茶園",
+        "href": "https://www.facebook.com/MEICHIA66/",
+        "cellphone": ["02-2938-6277"],
+        "address": "台北市文山區指南路三段38巷19號",
+        "content": "消費滿千享9折優惠(不得與其他優惠併用)"
+      },
+      {
+        "name": "上暘茶莊",
+        "href": "https://m.facebook.com/profile.php?id=155628364505043",
+        "cellphone": ["02-2938-5255"],
+        "address": "台北市文山區指南路三段38巷16之2號",
+        "content": "來店茶具組泡茶，即贈茶點乙份"
+      },
+      {
+        "name": "大頭土雞城",
+        "href": "https://www.facebook.com/dato29381943/",
+        "cellphone": ["02-2938-1943"],
+        "address": "台北市文山區指南路三段38巷18-2號",
+        "content": "店內消費滿千送果汁乙瓶，每桌限2瓶"
+      },
+      {
+        "name": "貓空山中茶",
+        "href": "https://www.facebook.com/MT0222344688/",
+        "cellphone": [" 02-2234-4688"],
+        "address": "台北市文山區指南路三段38巷33號2樓",
+        "content": "消費滿千並打卡分享，即贈送季節時蔬一份或飲料乙瓶"
+      },
+      {
+        "name": "紅木屋",
+        "href": "http://www.redwoodhouse.com.tw/",
+        "cellphone": ["02-2939-9706"],
+        "address": "台北市文山區指南路三段38巷31號",
+        "content": "凡消費用餐加泡茶，即贈送季節時蔬1份"
+      },
+      {
+        "name": "雙橡園茶坊",
+        "href": "https://www.facebook.com/ShuangHsiangYuan/",
+        "cellphone": ["02-2234-4917"],
+        "address": "台北市文山區指南路三段38巷33之6號",
+        "content": "泡茶消費滿千即贈送一籠手工饅頭；滿2千即贈1包香片茶葉"
+      },
+      {
+        "name": "阿義師的大茶壺餐廳",
+        "href": "http://bigteapot.idv.tw/",
+        "cellphone": ["02-2939-5615"],
+        "address": "台北市文山區指南路3段38巷37-1號",
+        "content": "用餐消費滿千送百元現金折價券，另每人加贈茶香枝仔冰一支"
+      },
+      {
+        "name": "貓空間",
+        "href": "https://www.facebook.com/%E8%B2%93%E7%A9%BA%E9%96%92-cats-cafe-164732883575769/",
+        "cellphone": ["0953-304-776"],
+        "address": "台北市文山區指南路三段38巷33號至37號間",
+        "content": "提供餐飲9折優惠"
+      },
+      {
+        "name": "生活在他方",
+        "href": "https://www.facebook.com/elsewherecafe.mao/",
+        "cellphone": ["02-8661-2081"],
+        "address": "台北市文山區指南路三段40巷8-5號",
+        "content": "消費滿300元，贈送手工餅乾乙份"
+      },
+      {
+        "name": "貓空茶神",
+        "href": "https://www.primedew.com/",
+        "cellphone": ["02-2936-2517"],
+        "address": "台北市文山區指南路三段38巷33-1號",
+        "content": "購買茶葉消費1500元以上(不含茶葉餅乾、茶葉牛軋糖)贈送原葉三角茶包(鐵觀音/鐵觀音紅茶/四季春/烏龍茶，四款擇一)乙盒"
+      },
+      {
+        "name": "清泉廣場",
+        "href": "https://www.facebook.com/QingquanSquare/",
+        "cellphone": [" 02-2938-3222"],
+        "address": "台北市文山區指南路三段38巷33之1號對面山坡",
+        "content": "用餐消費滿千贈送時蔬乙份(每桌限贈乙份)不得與其他優惠併用"
+      },
+      {
+        "name": "清泉山莊",
+        "href": "https://www.facebook.com/QingQuanVilla/",
+        "cellphone": ["02-2936-8761"],
+        "address": "台北市文山區指南路三段38巷33-3號",
+        "content": "消費滿千贈送乙壺貓空在地鐵觀音茶(冰熱擇一)/消費滿2000送2壺，以此類推"
+      },
+      {
+        "name": "找茶屋",
+        "href": "https://www.facebook.com/found.your.tea/",
+        "cellphone": ["02-2939-8622"],
+        "address": "台北市文山區指南路三段38巷33-5號",
+        "content": "凡用餐加品茗，即贈茶點一份"
+      },
+      {
+        "name": "咖啡巷",
+        "href": "http://cafestreet.tw/",
+        "cellphone": ["02-2234-8637"],
+        "address": "台北市文山區指南路三段38巷33-5號",
+        "content": "喵喵霜淇淋，第2支8折"
+      },
+      {
+        "name": "雪敲IceClimber",
+        "href": "https://www.facebook.com/ice.climber.tp/",
+        "cellphone": [" 02-2939-9226"],
+        "address": "台北市文山區指南路三段38巷33-2號",
+        "content": "消費滿100折10元(滿200折20元，以此類推)，不得與其他優惠併用"
+      },
+      {
+        "name": "松園茶坊",
+        "href": "https://www.facebook.com/MAOKONG.SONGYUAN",
+        "cellphone": ["02-2936-7117"],
+        "address": "台北市文山區指南路三段38巷31號",
+        "content": "凡用餐加品茗，贈送茶點一份"
+      },
+      {
+        "name": "龍門客棧",
+        "href": "https://longmenrestaurant.my-free.website/",
+        "cellphone": ["02-2939-8865"],
+        "address": "台北市文山區指南路三段38巷22之2號",
+        "content": "消費滿$1000元，送茶香地瓜(每桌限一次優惠)"
+      }
+    ]
+  }
+]

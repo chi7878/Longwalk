@@ -1134,9 +1134,26 @@
     border-radius: 8px;
 }
 
-.relared-info__content > p {
+.relared-info__list {
+    margin-bottom: 25px;
+}
+
+.relared-info__list-title {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #468d80;
+    display: block;
+}
+
+.relared-info__list-content {
+    padding-left: 15px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.relared-info__list-content p:nth-child(1) {
+    margin-bottom: 5px;
 }
 
 .relared-info__group {
