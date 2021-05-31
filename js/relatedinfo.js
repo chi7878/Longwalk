@@ -7,9 +7,9 @@ $(document).ready(function () {
             title: '第一段  捷運關渡站-二子坪',
             color: '#c37e7a',
             list: [ 
-                {image: '', title: '面天山'},
-                {image: '', title: '水圳'},
-                {image: '', title: '大菁'}
+                {image: '../images/routeFeature/image3.jpeg', title: '面天山'},
+                {image: '../images/routeFeature/image2.jpeg', title: '水圳'},
+                {image: '../images/routeFeature/image1.jpeg', title: '大菁'}
             ]
         },
         {   
