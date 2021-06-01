@@ -95,7 +95,7 @@ $(document).ready(function () {
         });
     }
 
-    if(window.location.href.indexOf('newsInfo') === -1 && window.location.href.indexOf('themeactivity') === -1) {
+    if(window.location.href.indexOf('newsInfo') === -1 && window.location.href.indexOf('themeactivity') === -1 && window.location.href.indexOf('routeInfo') === -1) {
         $(".info-carousel").slick({
             pauseOnFocus: false,
             dots: true,
