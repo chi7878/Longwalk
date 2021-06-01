@@ -99,6 +99,14 @@
     z-index: 2;
 }
 
+.route-content {
+    width: 90%;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    line-height: 2;
+    font-size: 18px;
+}
+
 .route-title__box {
     margin-bottom: 50px;
     display: flex;
