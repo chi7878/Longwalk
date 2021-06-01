@@ -220,6 +220,10 @@
     padding: 20px 0;
 }
 
+.info-carousel-box_route {
+    height: 526px;
+}
+
 .info-carousel {
     width: 80%;
     max-width: 1000px;
@@ -233,6 +237,13 @@
 .info-carousel__img {
     width: 100%;
     height: auto;
+}
+
+.info-carousel__title {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #6f6f6f;
 }
 
 .carousel-button {
@@ -274,7 +285,7 @@
 
 .dots-item {
     position: absolute;
-    bottom: 20px;
+    bottom: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
