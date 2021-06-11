@@ -70,7 +70,7 @@ $(document).ready(function () {
             list: [ 
                 {image: './images/routeFeature/image10.jpeg', title: '白石湖'},
                 {image: './images/routeFeature/image11.jpeg', title: '濕地'},
-                {image: './images/routeFeature/image12.jpg', title: '淘金釀'} 
+                {image: './images/routeFeature/image12.jpg', title: '桃金孃'} 
             ]
         },
         {   
