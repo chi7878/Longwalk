@@ -1171,6 +1171,10 @@
     margin-bottom: 10px;
 }
 
+.relared-info__list-content p {
+    white-space: break-spaces;
+}
+
 .relared-info__list-content p:nth-child(1) {
     margin-bottom: 5px;
 }
