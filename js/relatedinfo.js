@@ -89,17 +89,29 @@ $(document).ready(function () {
         window.location.href =  `${path}/index.html`;
         return;
     }
+
+    
     $('.main_relared-info > h1').text(data.title);
     $('body').append(`<style>.main_relared-info > h1:before{background-color: ${data.color}}.main_relared-info > h1:after{background-color: ${data.color}}</style>`)
     $('.relared-info__img').css('background-color', data.color);
     $('.relared-info__box').css('border-color', data.color);
     $('.relared-info__btn').css('border-color', data.color);
     $('.relared-info__btn').css('color', data.color);
+    $('.img-box > a').attr('href', `./images/attractions/attractions-${id}.jpg`);
+    $('.img-box > a > img').attr('src', `./images/attractions/attractions-${id}.jpg`);
+    
+    $( ".img-box" ).lightGallery({
+        controls: false,
+        mousewheel: false,
+        getCaptionFromTitleOrAlt: false,
+        download: false,
+        counter: false,
+        enableDrag: false,
+    }); 
 
     $.getJSON( "../relatedData.json", function( data ) {
         if (!id) return
         const findData = data.find(item => item.id.toString() === id);
-        console.log(findData);
         let strHtml = '';
                 
         findData.shop.forEach(function(data) {
@@ -128,8 +140,12 @@ $(document).ready(function () {
     
         $('.relared-info-shop').html(strHtml);
 
-        
+        setTimeout(() => {
+            $('html, body').animate({
+                scrollTop: $(location.hash).offset().top
+            }, 0);
+        }, 500);
 
 
-      });
+    });
 });
