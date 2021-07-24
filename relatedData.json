@@ -8,6 +8,20 @@
         "cellphone": ["2895-8558", "0972-076-287"],
         "address": "台北市北投區復興三路521巷50-1號前40M",
         "content": "打卡送一顆柑仔"
+      },
+      {
+        "name": "八仙六代園",
+        "href": "https://farm-3379.business.site/",
+        "cellphone": ["0961-305-258"],
+        "address": "台北市北投區承德路七段401巷551號",
+        "content": "草莓採果折價50元(預約制)"
+      },
+      {
+        "name": "朝仔這",
+        "href": "https://www.facebook.com/Stayhere99/",
+        "cellphone": ["0928-094-376"],
+        "address": "臺北市復興三路100號下方",
+        "content": "草莓採果折價50元(預約制)"
       }
     ]
   },
@@ -85,26 +99,31 @@
         "content": "個人消費滿佰贈精選財福風景明信片一張"
       },
       {
-        "name": "台北市北投區竹子湖路33-7號",
+        "name": "大梯田花卉生態農園",
         "href": "https://www.facebook.com/terraced.field",
         "cellphone": ["0917-639-349"],
-        "address": "竹子湖路33-3號",
-        "content": "來店消費滿1000元九折優惠"
+        "address": "台北市北投區竹子湖路33-7號",
+        "content": "入園消費即贈送植物寫生卡1張"
+      },
+      {
+        "name": "名陽匍休閒農莊",
+        "href": "https://www.facebook.com/minyangpu/",
+        "cellphone": ["0935-913-239"],
+        "address": "google地圖搜尋名陽匍休閒農莊即達",
+        "content": "消費滿600元贈送設計杯墊一個"
+      },
+      {
+        "name": "陽明山竹子湖故鄉海芋農園-附設餐廳",
+        "href": "https://www.facebook.com/BLHHR/",
+        "cellphone": ["0919-931-239"],
+        "address": "台北市北投區竹子湖路海芋大道",
+        "content": "消費滿千打九折"
       }
     ]
   },
   {
     "id": 3,
     "shop": [
-      {
-        "name": "水美溫泉會館",
-        "href": "https://www.sweetme.com.tw/",
-        "cellphone": [
-          "02-2898-3838"
-        ],
-        "address": "台北市北投區光明路224號",
-        "content": "大眾湯／獨享湯屋／日月湯屋 平假日現場價9折"
-      },
       {
         "name": "北投亞太飯店",
         "href": "https://www.apresort.com.tw/",
@@ -113,6 +132,15 @@
         ],
         "address": "台北市北投區幽雅路31號",
         "content": "1.午間套餐及下午茶不分平假日享9折\n2.大眾風呂享平日現場價9折\n3.湯屋享平日現場價95折\n4.SPA不分平假日1小時以上療程享9折"
+      },
+      {
+        "name": "皇池御膳館",
+        "href": "http://www.emperorspa.com.tw/",
+        "cellphone": [
+          "02-2862-3688"
+        ],
+        "address": "112台北市北投區紗帽路42-1號",
+        "content": "大眾池8折優惠(只限出示紀念章)"
       }
     ]
   },
@@ -802,7 +830,7 @@
         "content": "各式串串買1送1"
       },
       {
-        "name": "霸王鳥蛋(艋舺也是會長)",
+        "name": "霸王鳥蛋",
         "href": "",
         "cellphone": [
           "0913-171-082"
