@@ -8,6 +8,20 @@
         "cellphone": ["2895-8558", "0972-076-287"],
         "address": "台北市北投區復興三路521巷50-1號前40M",
         "content": "打卡送一顆柑仔"
+      },
+      {
+        "name": "八仙六代園",
+        "href": "https://farm-3379.business.site/",
+        "cellphone": ["0961-305-258"],
+        "address": "台北市北投區承德路七段401巷551號",
+        "content": "草莓採果折價50元(預約制)"
+      },
+      {
+        "name": "朝仔這",
+        "href": "https://www.facebook.com/Stayhere99/",
+        "cellphone": ["0928-094-376"],
+        "address": "臺北市復興三路100號下方",
+        "content": "草莓採果折價50元(預約制)"
       }
     ]
   },
@@ -113,6 +127,15 @@
         ],
         "address": "台北市北投區幽雅路31號",
         "content": "1.午間套餐及下午茶不分平假日享9折\n2.大眾風呂享平日現場價9折\n3.湯屋享平日現場價95折\n4.SPA不分平假日1小時以上療程享9折"
+      },
+      {
+        "name": "皇池御膳館",
+        "href": "http://www.emperorspa.com.tw/",
+        "cellphone": [
+          "02-2862-3688"
+        ],
+        "address": "112台北市北投區紗帽路42-1號",
+        "content": "大眾池8折優惠(只限出示紀念章)"
       }
     ]
   },
@@ -208,9 +231,6 @@
         "address": "台北市內湖區碧山路32號",
         "content": "用餐打卡消費9折優惠"
       },
-
-
-
       {
         "name": "年青人眼鏡 士林店",
         "href": "https://m.facebook.com/pages/category/Sunglasses---Eyewear-Store/%E5%B9%B4%E9%9D%92%E4%BA%BA%E7%9C%BC%E9%8F%A1-%E5%A3%AB%E6%9E%97%E5%BA%97-313508415380272/?locale2=zh_TW",
@@ -231,6 +251,55 @@
         "cellphone": ["0952-672-655"],
         "address": "台北市士林區大南路52號旁",
         "content": "士林廟口店\n士林區大南路52號旁\n士林捷運站中正店\n士林區中正路235巷42號\n同步進行優惠滿200送小豬血糕"
+      },
+      {
+        "name": "大溪名產沙茶滷味",
+        "href": "https://www.facebook.com/%E5%A4%A7%E6%BA%AA%E5%90%8D%E7%94%A2%E6%B2%99%E8%8C%B6%E6%BB%B7%E5%91%B3-208498912554762/",
+        "cellphone": ["02-28831319"],
+        "address": "臺北市士林區大東路11號之3",
+        "content": "滿200元送20元"
+      },
+      {
+        "name": "SNOWAVE浪花捲",
+        "href": "https://m.facebook.com/Snowave0414/",
+        "cellphone": ["0922-510-838"],
+        "address": "臺北市士林區大東路11之6號（康是美對面）",
+        "content": "優惠活動 火烤牛店/浪花捲店合辦\n甜甜餐 牛肉+ 飲料170優惠價 150\n活力餐 牛肉+冰品 350優惠價300\n手工霜淇淋任一口味，第二杯半價"
+      },
+      {
+        "name": "CUBEEF 火烤牛",
+        "href": "https://m.facebook.com/cubeefsnowave/",
+        "cellphone": ["0922-510-838"],
+        "address": "臺北市士林區大東路11之6號（康是美對面）",
+        "content": "優惠活動 火烤牛店/浪花捲店合辦\n甜甜餐 牛肉+ 飲料170優惠價 150\n活力餐 牛肉+冰品 350優惠價300\n追加\n學生餐 80"
+      },
+      {
+        "name": "小Ken先生",
+        "href": "https://www.facebook.com/XKenXS/?ref=page_internal",
+        "cellphone": ["0975-118-759"],
+        "address": "臺北市士林區大東路14號",
+        "content": "全店不限款式任選三件77折。\n購買純銀飾品加贈一塊拭銀布。\n耳環免費改夾式。"
+      },
+      {
+        "name": "食尚曼谷泰式創意料理",
+        "href": "https://m.facebook.com/fa.ba.bistro/",
+        "cellphone": ["02-28830013"],
+        "address": "台北市士林區大東路54號",
+        "content": "用餐9折"
+      },
+      {
+        "name": "青衫咖啡 X 瘋狂的馬",
+        "href": "https://www.facebook.com/crazyhorsebistro/",
+        "cellphone": ["02-2881-1978"],
+        "address": "台北市士林區大北路42號1樓",
+        "content": "咖啡與飲品 88折"
+      },
+      {
+        "name": "飛來發按摩休閒會館",
+        "href": "https://www.facebook.com/%E9%A3%9B%E4%BE%86%E7%99%BC%E6%8C%89%E6%91%A9-186442238061997/",
+        "cellphone": [],
+        "address": "台北市士林區文林路82號",
+        "content": "按摩品項1000元以上打8折"
       }
     ]
   },
@@ -880,6 +949,134 @@
           "02 2557 2020"
         ],
         "address": "寧夏夜市第27號攤",
+        "content": "9折優惠"
+      },
+      {
+        "name": "山海之間",
+        "href": "http://www.instagram.com/havegoodteapot",
+        "cellphone": [],
+        "address": "台北市大同區迪化街一段215號",
+        "content": "普洱習茶寶盒 優惠價$3000"
+      },
+      {
+        "name": "Le Zinc 洛 Café & Bar",
+        "href": "https://www.instagram.com/lezinc_taipeidadaocheng/",
+        "cellphone": [
+          "02-2552-1367#16"
+        ],
+        "address": "台北市大同區民生西路362巷34號",
+        "content": "89折"
+      },
+      {
+        "name": "大溪名產沙茶滷味",
+        "href": "https://www.facebook.com/%E5%A4%A7%E6%BA%AA%E5%90%8D%E7%94%A2%E6%B2%99%E8%8C%B6%E6%BB%B7%E5%91%B3-208498912554762/",
+        "cellphone": ["02-28831319"],
+        "address": "臺北市士林區大東路11號之3",
+        "content": "滿200元送20元"
+      },
+      {
+        "name": "SNOWAVE浪花捲",
+        "href": "https://m.facebook.com/Snowave0414/",
+        "cellphone": ["0922-510-838"],
+        "address": "臺北市士林區大東路11之6號（康是美對面）",
+        "content": "優惠活動 火烤牛店/浪花捲店合辦\n甜甜餐 牛肉+ 飲料170優惠價 150\n活力餐 牛肉+冰品 350優惠價300\n\n追加\n手工霜淇淋任一口味，第二杯半價"
+      },
+      {
+        "name": "CUBEEF 火烤牛",
+        "href": "https://m.facebook.com/cubeefsnowave/",
+        "cellphone": ["0922-510-838"],
+        "address": "臺北市士林區大東路11之6號（康是美對面）",
+        "content": "優惠活動 火烤牛店/浪花捲店合辦\n甜甜餐 牛肉+ 飲料170優惠價 150\n活力餐 牛肉+冰品 350優惠價300\n\n追加\n學生餐 80"
+      },
+      {
+        "name": "小Ken先生",
+        "href": "https://www.facebook.com/XKenXS/?ref=page_internal",
+        "cellphone": ["0975-118-759"],
+        "address": "臺北市士林區大東路14號",
+        "content": "全店不限款式任選三件77折。\n購買純銀飾品加贈一塊拭銀布。\n耳環免費改夾式。"
+      },
+      {
+        "name": "食尚曼谷泰式創意料理",
+        "href": "https://m.facebook.com/fa.ba.bistro/",
+        "cellphone": ["02-28830013"],
+        "address": "台北市士林區大東路54號",
+        "content": "用餐9折"
+      },
+      {
+        "name": "青衫咖啡 X 瘋狂的馬",
+        "href": "https://www.facebook.com/crazyhorsebistro/",
+        "cellphone": ["(02)2881-1978"],
+        "address": "台北市士林區大北路42號1樓",
+        "content": "咖啡與飲品 88折"
+      },
+      {
+        "name": "飛來發按摩休閒會館",
+        "href": "https://www.facebook.com/%E9%A3%9B%E4%BE%86%E7%99%BC%E6%8C%89%E6%91%A9-186442238061997/",
+        "cellphone": ["0975-377-188"],
+        "address": "台北市士林區文林路82號",
+        "content": "按摩品項1000元以上打8折"
+      },
+      {
+        "name": "婉筑美容、美甲",
+        "href": "",
+        "cellphone": [],
+        "address": "華西街夜市攤位91、93號攤",
+        "content": "單色光療特價399元、光療彩繪特價599元、造型款式特價999元"
+      },
+      {
+        "name": "罔市手工粉圓",
+        "href": "",
+        "cellphone": [],
+        "address": "華西街夜市攤位182號攤",
+        "content": "買10杯送1杯"
+      },
+      {
+        "name": "足御健康養生館",
+        "href": "https://www.facebook.com/pg/ZhuYuMassageResort/about/?ref=page_internal",
+        "cellphone": ["02-2302-9992"],
+        "address": "華西街夜市攤位49、51號攤",
+        "content": "腳底按摩送肩頸按摩加泡腳服務，40分鐘特價299元"
+      },
+      {
+        "name": "新營人牛肉",
+        "href": "",
+        "cellphone": ["0939-886-011"],
+        "address": "臺北市大同區延平北路三段80號",
+        "content": "炒麵、炒飯9折"
+      },
+      {
+        "name": "速肚與雞情",
+        "href": "",
+        "cellphone": ["0927-121-323"],
+        "address": "公館夜市32號攤",
+        "content": "買200送30元商品"
+      },
+      {
+        "name": "印度拉茶",
+        "href": "",
+        "cellphone": ["0989-148-588"],
+        "address": "公館夜市36號攤",
+        "content": "原味奶茶3包100"
+      },
+      {
+        "name": "珍珠芭樂",
+        "href": "",
+        "cellphone": ["0935-074-202"],
+        "address": "公館夜市44號攤",
+        "content": "滿百95折打"
+      },
+      {
+        "name": "秋雲潤餅",
+        "href": "https://www.facebook.com/pages/%E7%A7%8B%E9%9B%B2%E6%BD%A4%E9%A4%85/158928267611025/",
+        "cellphone": [],
+        "address": "寧夏夜市第43號攤",
+        "content": "9折優惠"
+      },
+      {
+        "name": "FUN SUN G雞排",
+        "href": "https://www.facebook.com/FUN-SUN-G-1176953209128647/",
+        "cellphone": ["0988-827-326"],
+        "address": "寧夏夜市第71號攤",
         "content": "9折優惠"
       }
     ]

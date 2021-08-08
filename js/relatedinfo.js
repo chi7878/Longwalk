@@ -4,7 +4,7 @@ $(document).ready(function () {
     let list =  [
         {   
             id: 1,
-            title: '第一段  捷運關渡站-二子坪',
+            title: '第一段  捷運關渡站-二子坪服務站',
             color: '#c37e7a',
             list: [ 
                 {image: '../images/routeFeature/image3.jpeg', title: '面天山'},
@@ -14,7 +14,7 @@ $(document).ready(function () {
         },
         {   
             id: 2,
-            title: '第二段  二子坪服務站-小油坑服務站',
+            title: '第二段  面天坪涼亭-小油坑服務站',
             color: '#d0935b',
             list: [ 
                 {image: '', title: '大屯山'},
@@ -64,7 +64,7 @@ $(document).ready(function () {
         },
         {   
             id: 7,
-            title: '第七段  名門社區公車站-政大後山',
+            title: '第七段  世界山莊-飛龍步道政大後山',
             color: '#dfdd84',
             list: [ 
                 {image: '', title: '樟湖山'},
@@ -94,11 +94,12 @@ $(document).ready(function () {
     $('.main_relared-info > h1').text(data.title);
     $('body').append(`<style>.main_relared-info > h1:before{background-color: ${data.color}}.main_relared-info > h1:after{background-color: ${data.color}}</style>`)
     $('.relared-info__img').css('background-color', data.color);
+    $('.img-box__btn').css('background-color', data.color);
     $('.relared-info__box').css('border-color', data.color);
     $('.relared-info__btn').css('border-color', data.color);
     $('.relared-info__btn').css('color', data.color);
-    $('.img-box > a').attr('href', `./images/attractions/attractions-${id}.jpg`);
-    $('.img-box > a > img').attr('src', `./images/attractions/attractions-${id}.jpg`);
+    $('.relared-info__box_attractions .img-box > a').attr('href', `./images/attractions/attractions-${id}.jpg`);
+    $('.relared-info__box_attractions .img-box > a > img').attr('src', `./images/attractions/attractions-${id}.jpg`);
     
     $( ".img-box" ).lightGallery({
         controls: false,
@@ -146,6 +147,9 @@ $(document).ready(function () {
             }, 0);
         }, 500);
 
-
+        
+    $('.top-btn').click(function() {
+        $('html,body').animate({scrollTop: 0}, 500);
+    });
     });
 });
