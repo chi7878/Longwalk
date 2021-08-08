@@ -99,26 +99,31 @@
         "content": "個人消費滿佰贈精選財福風景明信片一張"
       },
       {
-        "name": "台北市北投區竹子湖路33-7號",
+        "name": "大梯田花卉生態農園",
         "href": "https://www.facebook.com/terraced.field",
         "cellphone": ["0917-639-349"],
-        "address": "竹子湖路33-3號",
-        "content": "來店消費滿1000元九折優惠"
+        "address": "台北市北投區竹子湖路33-7號",
+        "content": "入園消費即贈送植物寫生卡1張"
+      },
+      {
+        "name": "名陽匍休閒農莊",
+        "href": "https://www.facebook.com/minyangpu/",
+        "cellphone": ["0935-913-239"],
+        "address": "google地圖搜尋名陽匍休閒農莊即達",
+        "content": "消費滿600元贈送設計杯墊一個"
+      },
+      {
+        "name": "陽明山竹子湖故鄉海芋農園-附設餐廳",
+        "href": "https://www.facebook.com/BLHHR/",
+        "cellphone": ["0919-931-239"],
+        "address": "台北市北投區竹子湖路海芋大道",
+        "content": "消費滿千打九折"
       }
     ]
   },
   {
     "id": 3,
     "shop": [
-      {
-        "name": "水美溫泉會館",
-        "href": "https://www.sweetme.com.tw/",
-        "cellphone": [
-          "02-2898-3838"
-        ],
-        "address": "台北市北投區光明路224號",
-        "content": "大眾湯／獨享湯屋／日月湯屋 平假日現場價9折"
-      },
       {
         "name": "北投亞太飯店",
         "href": "https://www.apresort.com.tw/",
@@ -871,7 +876,7 @@
         "content": "各式串串買1送1"
       },
       {
-        "name": "霸王鳥蛋(艋舺也是會長)",
+        "name": "霸王鳥蛋",
         "href": "",
         "cellphone": [
           "0913-171-082"
