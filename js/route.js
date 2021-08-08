@@ -98,27 +98,18 @@ $(document).ready(function () {
             ],
             content: '靑剛櫟，總是會結出大量的果實，\n是臺灣黑熊及許多山區動物如飛鼠、山羌、山豬、山羊秋冬最愛的食物之一，\n是一種為了生存、需要維持族群數量而樂於分享的樹種，\n樹身堅硬，過去常會拿來做建材或是鐵路枕木使用。\n我們經常會在以動物為主角的卡通中，看到靑剛櫟可愛的果實\n成為動物們喜悅啃咬的食物，它是通往童年的媒介，\n也是人與自然緊密相繫的橋樑。\n而早期住民上山最愛的解渴良方──酸藤，\n也容易在此山徑上見到芳蹤，酸藤為了吸收更多陽光，\n常以纏繞方式爬上樹木頂端，林木總是不吝惜地與酸藤分享樹冠的風光，\n酸藤也在春夏交接時分，回報一抹緋紅，是分享也是共享。',
             list: [ 
-<<<<<<< HEAD
                 {image: './images/routeFeature/image16.jpeg', title: '南港山'},
                 {image: './images/routeFeature/image17.jpg', title: '巨石峭壁'},
-=======
-                {image: './images/routeFeature/image16.jpg', title: '南港山'},
-                {image: './images/routeFeature/image17.jpeg', title: '巨石峭壁'},
->>>>>>> d0538497ddb82d5b0bc57bcda81e21ac9ad7bd4f
                 {image: './images/routeFeature/image18.jpg', title: '青剛櫟'}
             ]
         },
         {   
             id: 7,
-<<<<<<< HEAD
             title: '第七段  世界山莊-飛龍步道政大後山',
-=======
-            title: '第七段  名門社區公車站-政大後山',
             carousel: [
                 {image: './images/routeFeature/第七段/貓空樟樹步道.jpg', title: '貓空樟樹步道'},
                 {image: './images/routeFeature/第七段/貓空樟樹步道 2.jpg', title: '貓空樟樹步道'},
             ],
->>>>>>> d0538497ddb82d5b0bc57bcda81e21ac9ad7bd4f
             content: '杜英是臺灣原生種，主要生長在深山潮濕環境或是稜線上迎風地帶，\n萬綠叢中的點點紅葉是杜英成長週期的標誌(常綠樹木衰老前會轉紅色)，\n堅硬的果實表面有許多網紋，可作為佛珠使用，\n俗稱「金剛子」，意味著每個人一生刻畫滿滿的故事，\n是生命努力的標記。\n杜英在逆境中昂然挺立，不卑不亢的姿態，\n彷彿替臺北大縱走的末段留下了深刻的足印。',
             list: [ 
                 {image: './images/routeFeature/image19.jpeg', title: '樟湖山'},
