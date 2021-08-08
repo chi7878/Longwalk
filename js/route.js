@@ -98,7 +98,7 @@ $(document).ready(function () {
             ],
             content: '靑剛櫟，總是會結出大量的果實，\n是臺灣黑熊及許多山區動物如飛鼠、山羌、山豬、山羊秋冬最愛的食物之一，\n是一種為了生存、需要維持族群數量而樂於分享的樹種，\n樹身堅硬，過去常會拿來做建材或是鐵路枕木使用。\n我們經常會在以動物為主角的卡通中，看到靑剛櫟可愛的果實\n成為動物們喜悅啃咬的食物，它是通往童年的媒介，\n也是人與自然緊密相繫的橋樑。\n而早期住民上山最愛的解渴良方──酸藤，\n也容易在此山徑上見到芳蹤，酸藤為了吸收更多陽光，\n常以纏繞方式爬上樹木頂端，林木總是不吝惜地與酸藤分享樹冠的風光，\n酸藤也在春夏交接時分，回報一抹緋紅，是分享也是共享。',
             list: [ 
-                {image: './images/routeFeature/image16.jpeg', title: '南港山'},
+                {image: './images/routeFeature/image16.jpg', title: '南港山'},
                 {image: './images/routeFeature/image17.jpg', title: '巨石峭壁'},
                 {image: './images/routeFeature/image18.jpg', title: '青剛櫟'}
             ]
