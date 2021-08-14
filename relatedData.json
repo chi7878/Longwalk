@@ -23,6 +23,12 @@
         "address": "臺北市復興三路100號下方",
         "content": "草莓採果折價50元(預約制)"
       }
+    ],
+    "travel": [
+      {
+        "name": "丘山行",
+        "href": "https://hillmont.tw/activities/tpe1"
+      }
     ]
   },
   {
@@ -119,6 +125,12 @@
         "address": "台北市北投區竹子湖路海芋大道",
         "content": "消費滿千打九折"
       }
+    ],
+    "travel": [
+      {
+        "name": "丘山行",
+        "href": "https://hillmont.tw/activities/tpe2"
+      }
     ]
   },
   {
@@ -141,6 +153,24 @@
         ],
         "address": "112台北市北投區紗帽路42-1號",
         "content": "大眾池8折優惠(只限出示紀念章)"
+      }
+    ],
+    "travel": [
+      {
+        "name": "丘山行",
+        "href": "https://hillmont.tw/activities/tpe3"
+      },
+      {
+        "name": "kkday",
+        "href": "https://www.kkday.com/zh-tw/product/39561"
+      },
+      {
+        "name": "發現者旅行社",
+        "href": "https://www.discoverer.com.tw/products.php?func=p_detail&p_id=178&pc_parent=2"
+      },
+      {
+        "name": "美都歡樂旅遊",
+        "href": "https://www.happy-times.com.tw/product_d.php?lang=tw&tb=1&id=1922"
       }
     ]
   },
@@ -188,6 +218,12 @@
         "cellphone": ["02-2796-7393"],
         "address": "台北市內湖區碧山路32號",
         "content": "用餐打卡消費9折優惠"
+      }
+    ],
+    "travel": [
+      {
+        "name": "丘山行",
+        "href": "https://hillmont.tw/activities/tpe4"
       }
     ]
   },
@@ -305,6 +341,27 @@
         "cellphone": [],
         "address": "台北市士林區文林路82號",
         "content": "按摩品項1000元以上打8折"
+      }
+    ],
+    "travel": [
+      {
+        "name": "丘山行",
+        "href": "https://hillmont.tw/activities/tpe5"
+      },
+      {
+        "name": "五福旅行社",
+        "href": "https://domestic.lifetour.com.tw/detail/20TWCTPEB01U#TPET1B21820A"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "shop": [
+    ],
+    "travel": [
+      {
+        "name": "丘山行",
+        "href": "https://hillmont.tw/activities/tpe6"
       }
     ]
   },
@@ -554,7 +611,12 @@
         "address": "台北市文山區指南路三段40巷8-5號1樓",
         "content": "消費滿300元贈手工餅乾乙份"
       }
-      
+    ],
+    "travel": [
+      {
+        "name": "丘山行",
+        "href": "https://hillmont.tw/activities/tpe7"
+      }
     ]
   },
   {
@@ -1084,6 +1146,8 @@
         "address": "寧夏夜市第71號攤",
         "content": "9折優惠"
       }
+    ],
+    "travel": [
     ]
   }
 ]
