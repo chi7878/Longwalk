@@ -114,11 +114,11 @@ $(document).ready(function () {
         if (!id) return
         const findData = data.find(item => item.id.toString() === id);
         let strHtml = '';
+        let travelStr = '';
                 
         findData.shop.forEach(function(data) {
             const phone = data.cellphone.map(item => `<li>${item}</li>`).join('');
             
-
             strHtml += `
             <div class="relared-info__list">
                 <a href="${data.href}" class="relared-info__list-title" target="_blank">📍${data.name}</a>
@@ -138,8 +138,20 @@ $(document).ready(function () {
                 </div>
             </div>`;
         })
+
+        findData.travel.forEach(function(data) {            
+            travelStr += `
+            <div class="relared-info__list">
+                <a href="${data.href}" class="relared-info__list-title" target="_blank">🚃${data.name}</a>
+            </div>`;
+        })
     
         $('.relared-info-shop').html(strHtml);
+        $('.relared-info__content_travel').html(travelStr);
+
+        if (findData.travel.length === 0) {
+            $('#travel').hide();
+        }
 
         setTimeout(() => {
             $('html, body').animate({

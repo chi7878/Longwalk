@@ -111,7 +111,7 @@ $(document).ready(function () {
                 {image: './images/routeFeature/第八段/生態觀察.jpg', title: '社子島濕地解說小築生態觀察'},
                 {image: './images/routeFeature/第八段/親子同樂.jpg', title: '道南河濱共融式遊戲場'},
             ],
-            content: '臺北盆地好山好水，三面環山同時也被河流圍繞，基隆河則橫貫其中。除了山系縱走，從水系擁抱臺北市最好的選擇便是河濱自行車專用道。臺北市河濱自行車道建設完善，路面平坦安全，沿線景色宜人，騎行其中，除運動休閒更可親近大自然，廣闊的綠地裡蘊藏無數的生機，河畔長草叢是鳥兒與昆蟲棲息繁殖的臥房，灘地紅樹林則是彈塗魚與招潮蟹大快朵頤的餐廳。而河濱良好的視野與清新的空氣，更是都會人卸除壓力、告別塵囂的最好良方。',
+            content: '臺北盆地好山好水，三面環山同時也被河流圍繞，\n基隆河則橫貫其中。\n除了山系縱走，從水系擁抱臺北市最好的選擇便是河濱自行車專用道。\n臺北市河濱自行車道建設完善，路面平坦安全\n，沿線景色宜人，騎行其中，\n除運動休閒更可親近大自然，廣闊的綠地裡蘊藏無數的生機，\n河畔長草叢是鳥兒與昆蟲棲息繁殖的臥房\n，灘地紅樹林則是彈塗魚與招潮蟹大快朵頤的餐廳。\n而河濱良好的視野與清新的空氣，\n更是都會人卸除壓力、告別塵囂的最好良方。',
             list: [ 
                 {image: './images/routeFeature/image22.jpg', title: '休閒賞景'},
                 {image: './images/routeFeature/image23.jpg', title: '親子同樂'},
@@ -131,12 +131,30 @@ $(document).ready(function () {
     let strHtml = '';
     let carouselHtml = '';
     data.list.forEach(item => {
+        let photoText = '';
+        if (item.title === '大菁') {
+            photoText = 'Photo credit: 阿橋花譜 KHQ Flower Guide on VisualHunt.com';
+        } else if (item.title === '桃金孃') {
+            photoText = 'Photo credit: Bernard DUPONT on VisualHunt.com';
+        } else if (item.title === '蝴蝶') {
+            photoText = 'Photo credit: Balakrishnan Valappil on Visualhunt';
+        } 
+
+        let photoClass = '';
+
+        if (item.title === '運動健身') {
+            photoClass = 'sports-img';
+        } else if (item.title === '楓香' || item.title === '小毛氈苔') {
+            photoClass = 'tree-img';
+        }
+
         strHtml += `
             <li class="info-item">
                 <div class="info-item__img">
-                    <img src="${item.image}" />
+                    <img class="${photoClass}" src="${item.image}" />
                 </div>
                 <p>${item.title}</p>
+                <p>${photoText}</p>
             </li>
         `;
     });
@@ -154,6 +172,10 @@ $(document).ready(function () {
         });
     } else {
         $('.info-carousel-box_route').hide();
+    }
+
+    if (id === '8') {
+        $('.info-btn').attr('href', 'https://heo.gov.taipei/cp.aspx?n=9554E4F41ABC8368');
     }
     
     $('.info-list').html(strHtml);
