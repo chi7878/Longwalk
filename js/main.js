@@ -49,8 +49,33 @@ $(document).ready(function () {
                 $('.theme-box > p').text(findData.content);
                 $('.theme-date__item:nth-child(1) > p').text(findData.start_time);
                 $('.theme-date__item:nth-child(2) > p').text(findData.end_time);
-                $('.theme-btn').attr('class',`theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}`);
-                $('.theme-btn').text(findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿'));
+
+                if (id === '11') {
+                    let strHtml = '';
+                    const list = [{title: '梯次一 09:00 開發旅行社'}, {title: '梯次二 10:00 開發旅行社'}, {title: '梯次三 13:30 丘山行'}, {title: '梯次四 10:00 易遊網'}];
+
+                    list.forEach(function(data) {
+                        strHtml += `<a class="theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}"  target="_blank">${data.title} ${findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿')}</a>`;
+                    })
+
+                    $('.theme-info > .theme-btn').hide();
+                    $('.theme-btn-group').html(strHtml);
+                } else if (id === '12') {
+                    let strHtml = '';
+                    const list = [{title: '梯次一 08:00 開發旅行社'}, {title: '梯次二 08:30 開發旅行社'}, {title: '梯次三 09:00 易遊網'}, {title: '梯次四 13:30 丘山行'}, {title: '梯次五 14:00 KKday'}];
+
+                    list.forEach(function(data) {
+                        strHtml += `<a class="theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}"  target="_blank">${data.title} ${findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿')}</a>`;
+                    })
+
+                    $('.theme-info > .theme-btn').hide();
+                    $('.theme-btn-group').html(strHtml);
+                } else {
+                    $('.theme-btn-group').hide();
+                    $('.theme-btn').attr('class',`theme-btn theme-btn_${findData.status === '0' ? 'null' : (findData.status === '1' ? 'open' : 'close')}`);
+                    $('.theme-btn').text(findData.status === '0' ? '活動報名尚未開放' : (findData.status === '1' ? '活動報名' : '報名已額滿'));
+                }
+
             } else if (window.location.href.indexOf('themeactivity') !== -1 && id === null) {
                 window.location.href =  `${path}/index.html`;
             }

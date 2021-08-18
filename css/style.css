@@ -115,7 +115,8 @@ body, html {
 }
 
 .nav-item:nth-child(6) .nav-item__btn {
-    background-position-x: -510px;
+    width: 160px;
+    background-position-x: -735px;
 }
 
 .nav-item:nth-child(7) .nav-item__btn {
