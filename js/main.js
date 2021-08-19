@@ -16,7 +16,7 @@ $(document).ready(function () {
     $(".nav-mobile__menu-scrollbar").overlayScrollbars({});
 
     const id = new URLSearchParams(window.location.search).get('id');
-
+    $('.theme-info > .theme-btn').hide();
     $.ajax({
         type: "GET",
         url: `${apiRoute}/api/activity`, 
@@ -52,25 +52,26 @@ $(document).ready(function () {
 
                 if (id === '11') {
                     let strHtml = '';
-                    const list = [{title: '梯次一 09:00 開發旅行社'}, {title: '梯次二 10:00 開發旅行社'}, {title: '梯次三 13:30 丘山行'}, {title: '梯次四 10:00 易遊網'}];
+                    const list = [{title: '開發旅行社 - 富陽三寶變變變 + 101景觀台', href: 'https://www.kaifa04376942.com.tw/act0710.html'}, {title: '丘山行 - 富陽三寶變變變 + 一日郊山健行挑戰', href: 'https://hillmont.tw/activities/greenyourjourney/'}, {title: '易遊網 - 富陽三寶變變變 + 台北探索館', href: 'https://trip.eztravel.com.tw/domestic/introduction/ODT0000009355'}];
 
                     list.forEach(function(data) {
-                        strHtml += `<a class="theme-btn theme-btn_open"  target="_blank">${data.title} 活動報名</a>`;
+                        strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
                     })
 
                     $('.theme-info > .theme-btn').hide();
-                    $('.theme-btn-group').html(strHtml);
+                    $('.theme-btn-content').html(strHtml);
                 } else if (id === '12') {
                     let strHtml = '';
-                    const list = [{title: '梯次一 08:00 開發旅行社'}, {title: '梯次二 08:30 開發旅行社'}, {title: '梯次三 09:00 易遊網'}, {title: '梯次四 13:30 丘山行'}, {title: '梯次五 14:00 KKday'}];
+                    const list = [{title: '開發旅行社 - 前進．探索未知的火山 + 北投老街', href: 'https://www.kaifa04376942.com.tw/act0724.html'}, {title: '丘山行 - 前進．探索未知的火山 + 一日郊山健行挑戰', href: 'https://hillmont.tw/activities/greenyourjourney2/'}, {title: '易遊網 - 前進．探索未知的火山 + 深坑老街', href: 'https://trip.eztravel.com.tw/domestic/introduction/ODT0000009356'}];
 
                     list.forEach(function(data) {
-                        strHtml += `<a class="theme-btn theme-btn_open"  target="_blank">${data.title} 活動報名</a>`;
+                        strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
                     })
 
                     $('.theme-info > .theme-btn').hide();
-                    $('.theme-btn-group').html(strHtml);
+                    $('.theme-btn-content').html(strHtml);
                 } else {
+                    $('.theme-info > .theme-btn').show();
                     $('.theme-btn-group').hide();
                     $('.theme-btn').attr('class',`theme-btn theme-btn_null`);
                     $('.theme-btn').text('活動報名尚未開放');
