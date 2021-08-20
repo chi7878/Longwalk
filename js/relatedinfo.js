@@ -126,7 +126,7 @@ $(document).ready(function () {
                     <p>優惠內容:</p>
                     <p>${data.content}</p>
                 </div>
-                <div class="relared-info__list-content">
+                <div class="relared-info__list-content ${data.address === '' ? 'd-none' : ''}">
                     <p>地址:</p>
                     <p>${data.address}</p>
                 </div>
