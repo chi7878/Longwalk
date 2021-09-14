@@ -50,7 +50,7 @@ $(document).ready(function () {
                 $('.theme-date__item:nth-child(1) > p').text(findData.start_time);
                 $('.theme-date__item:nth-child(2) > p').text(findData.end_time);
 
-                if (id === '11') {
+                if (id === '17') {
                     let strHtml = '';
                     const list = [{title: '開發旅行社 - 富陽三寶變變變 + 101景觀台', href: 'https://www.kaifa04376942.com.tw/act0710.html'}, {title: '丘山行 - 富陽三寶變變變 + 一日郊山健行挑戰', href: 'https://hillmont.tw/activities/greenyourjourney/'}, {title: '易遊網 - 富陽三寶變變變 + 台北探索館', href: 'https://trip.eztravel.com.tw/domestic/introduction/ODT0000009355'}];
 
@@ -60,7 +60,7 @@ $(document).ready(function () {
 
                     $('.theme-info > .theme-btn').hide();
                     $('.theme-btn-content').html(strHtml);
-                } else if (id === '12') {
+                } else if (id === '18') {
                     let strHtml = '';
                     const list = [{title: '開發旅行社 - 前進．探索未知的火山 + 北投老街', href: 'https://www.kaifa04376942.com.tw/act0724.html'}, {title: '丘山行 - 前進．探索未知的火山 + 一日郊山健行挑戰', href: 'https://hillmont.tw/activities/greenyourjourney2/'}, {title: '易遊網 - 前進．探索未知的火山 + 深坑老街', href: 'https://trip.eztravel.com.tw/domestic/introduction/ODT0000009356'}];
 
