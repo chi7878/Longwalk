@@ -55,7 +55,7 @@ $(document).ready(function () {
                     const list = [{title: '開發旅行社 - 富陽三寶變變變 + 101景觀台', href: 'https://www.kaifa04376942.com.tw/act0710.html'}, {title: '丘山行 - 富陽三寶變變變 + 一日郊山健行挑戰', href: 'https://hillmont.tw/activities/greenyourjourney/'}, {title: '易遊網 - 富陽三寶變變變 + 台北探索館', href: 'https://trip.eztravel.com.tw/domestic/introduction/ODT0000009355'}, {title: '永恆旅行社 - 富陽三寶變變變 + 101景觀台', href: 'https://www.kaifa04376942.com.tw/E-act0710.html'}];
 
                     list.forEach(function(data, i) {
-                        strHtml += `<div><p>${data.title}</p><a ${i == 1 || i == 2 ? '' : `href="${data.href}"`} target="_blank"><img src="images/專屬遊程+報名按鈕圖檔${i == 1 || i == 2 ? '2' : '1'}.png"></a></div>`;
+                        strHtml += `<div><p>${data.title}</p><a target="_blank"><img src="images/專屬遊程+報名按鈕圖檔2.png"></a></div>`;
                     })
 
                     $('.theme-info > .theme-btn').hide();
