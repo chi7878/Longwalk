@@ -65,7 +65,7 @@ $(document).ready(function () {
                     const list = [{title: '開發旅行社 - 前進．探索未知的火山 + 北投老街', href: 'https://www.kaifa04376942.com.tw/act0724.html'}, {title: '丘山行 - 前進．探索未知的火山 + 一日郊山健行挑戰', href: 'https://hillmont.tw/activities/greenyourjourney2/'}, {title: '易遊網 - 前進．探索未知的火山 + 深坑老街', href: 'https://trip.eztravel.com.tw/domestic/introduction/ODT0000009356'}, {title: '永恆旅行社 - 前進．探索未知的火山 + 北投老街', href: 'https://www.kaifa04376942.com.tw/E-act0724.html'}];
 
                     list.forEach(function(data) {
-                        strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
+                        strHtml += `<div><p>${data.title}</p><a target="_blank"><img src="images/專屬遊程+報名按鈕圖檔2.png"></a></div>`;
                     })
 
                     $('.theme-info > .theme-btn').hide();
