@@ -907,6 +907,7 @@
     white-space: nowrap;
     padding-right: 10px;
     height: 17px;
+    width: 100%;
 }
 
 .theme-btn {
