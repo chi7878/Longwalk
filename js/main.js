@@ -72,7 +72,7 @@ $(document).ready(function () {
                     $('.theme-btn-content').html(strHtml);
                 } else if (id === '19') {
                     let strHtml = '';
-                    const list = [{title: '開發旅行社-千階祈願，參道縱走+101景觀台+(與優人一起『雲腳』)', href: 'https://kaifa04376942.com.tw/act1200.html'}, {title: '可樂旅遊-千階祈願．參道縱走+與優人一起『雲腳』+貓空纜車、茶香麻糬體驗', href: 'https://www.colatour.com.tw/C10A_TourSell/C10A06_TourItinerary.aspx?PatternNo=96794'}, {title: '可樂旅遊-千階祈願．參道縱走+樟樹步道、貓空品茗', href: 'https://www.colatour.com.tw/C10A_TourSell/C10A06_TourItinerary.aspx?PatternNo=96821'}, {title: '丘山行-千階祈願．參道縱走', href: 'https://hillmont.tw/activities/greenyourjourney3'}];
+                    const list = [{title: '開發旅行社-千階祈願，參道縱走+101景觀台+(與優人一起『雲腳』)', href: 'https://kaifa04376942.com.tw/act1200.html'}, {title: '可樂旅遊-千階祈願．參道縱走+與優人一起『雲腳』+貓空纜車、茶香麻糬體驗', href: 'https://www.colatour.com.tw/C10A_TourSell/C10A06_TourItinerary.aspx?PatternNo=96794'}, {title: '可樂旅遊-千階祈願．參道縱走+樟樹步道、貓空品茗', href: 'https://www.colatour.com.tw/C10A_TourSell/C10A06_TourItinerary.aspx?PatternNo=96821'}, {title: '丘山行-千階祈願．參道縱走', href: 'https://hillmont.tw/activities/greenyourjourney3'}, {title: '易遊網-千階祈願‧參道縱走+與優人一起『雲腳』+貓空茗茶一日遊', href: 'https://trip.eztravel.com.tw/domestic/introduction/ODT0000009444'}];
 
                     list.forEach(function(data) {
                         strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
