@@ -224,4 +224,8 @@ $(document).ready(function () {
         });
     }
 
+    $('.popup-close').click(function() {
+        $('.popup').hide();
+    })
+
 });

@@ -505,11 +505,14 @@ $(document).ready(function () {
 
 
                 if (findData.status === '0') {
-                    toggleStatus(true);
+                    toggleStatus(0);
                     $('.input-file__text').text(findData.content.split('/storage/audio/')[1]);
                     $('.input-file__text').attr('data-name', findData.content);
+                } else if (findData.status === '1') {
+                    toggleStatus(1);
+                    $('.input-label_videos > input').val(findData.content);
                 } else {
-                    toggleStatus(false);
+                    toggleStatus(2);
                     $('.input-label_videos > input').val(findData.content);
                 }
             });
@@ -521,12 +524,25 @@ $(document).ready(function () {
         }
 
         function toggleStatus(status) {
-            if (status) {
-                $(".input-label_videos").hide();
-                $(".input-upload").show();
-            } else {
-                $(".input-upload").hide();
-                $(".input-label_videos").show();
+            console.log(status);
+            switch(status) {
+                case 0:
+                    $(".input-label_videos").hide();
+                    $(".input-upload").show();
+
+                    break;
+                case 1: 
+                    $(".input-upload").hide();
+                    $(".input-label_videos").show();
+                    $('.input-label_videos .input-text').text('影片網址:');
+
+                    break;
+                case 2:
+                    $(".input-upload").hide();
+                    $(".input-label_videos").show();
+                    $('.input-label_videos .input-text').text('相簿網址:');
+
+                    break;
             }
         }
 
@@ -580,13 +596,12 @@ $(document).ready(function () {
         $('.icon-btn__add').click(function (e) { 
             e.preventDefault();
             restPopup();
-            toggleStatus(true);
+            toggleStatus(0);
         });
 
         $('.input-label_radio > input[name="status"]').change(function (e) {
             e.preventDefault();
-            toggleStatus(e.currentTarget.value === '0');
-            console.log(123)
+            toggleStatus(parseInt(e.currentTarget.value));
         });
 
         $('.input-file').change(function (e) { 
@@ -598,7 +613,7 @@ $(document).ready(function () {
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
             const data = fromData();
-            data.status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : 1;
+            data.status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : ($(`.input-label_radio > input[value='0']`)[0].checked ? 1 : 2);
             data.content = data.status === 0 ? $(".input-file__text")[0].dataset.name : $(".input-label_videos > input").val();
             data.status === 0 && file !== undefined ? delete data.content : delete data.file;
             data.method =  selectData !== undefined ? 'update' : 'new';
