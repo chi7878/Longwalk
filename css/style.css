@@ -370,7 +370,6 @@ body, html {
 .footer-info {
     display: flex;
     justify-content: space-around;
-    align-items: center;
     position: relative;
     z-index: 2;
 }
@@ -417,6 +416,7 @@ body, html {
 
     .footer-info {
         flex-direction: column;
+        padding-left: 10px;
     }
 
     .footer-info__box {
