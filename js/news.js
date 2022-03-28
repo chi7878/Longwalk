@@ -59,7 +59,7 @@ $(document).ready(function () {
                     strHtml += `
                     <div class="info-carousel__link">
                         <div class="info-carousel__wrapper">
-                            <img src="${apiRoute}/api/activity_photo?model=news&file_name=${item.content.split('/storage/news/')[1]}" alt="carousel image">
+                            <img src="${apiRoute}/api/activity_photo?model=news&file_name=${encodeURIComponent(item.content.split('/storage/news/')[1] || '')}" alt="carousel image">
                         </div>
                     </div> 
                     `
