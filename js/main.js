@@ -82,7 +82,7 @@ $(document).ready(function () {
                     $('.theme-btn-content').html(strHtml);
                 } else if (id === '20') {
                     let strHtml = '';
-                    const list = [{title: 'ACCUPASS-春日饗宴．白石湖草莓季-健行x採果xDIY', href: 'https://www.accupass.com/event/2202241033581551539517'}, {title: '趣健行-春日饗宴．白石湖草莓季-登山健行x特色餐', href: 'https://www.titohiking.com.tw/products/group/detail?id=TW113220326D'}, {title: '丘山行-春日饗宴．白石湖草莓季-登山健行x特色餐x雙領隊', href: 'https://hillmont.tw/activities/greenyourjourney4/'}];
+                    const list = [{title: 'ACCUPASS-春日饗宴．白石湖草莓季-健行x採果xDIY', href: 'https://www.accupass.com/event/2202241033581551539517'}, {title: '趣健行-春日饗宴．白石湖草莓季-登山健行x特色餐', href: 'https://www.titohiking.com.tw/products/group/detail?id=TW113220409A'}, {title: '丘山行-春日饗宴．白石湖草莓季-登山健行x特色餐x雙領隊', href: 'https://hillmont.tw/activities/greenyourjourney4/'}];
 
                     list.forEach(function(data, i) {
                         if (i === 2 || i === 0) {
