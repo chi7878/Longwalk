@@ -85,11 +85,17 @@ $(document).ready(function () {
                     const list = [{title: 'ACCUPASS-春日饗宴．白石湖草莓季-健行x採果xDIY', href: 'https://www.accupass.com/event/2202241033581551539517'}, {title: '趣健行-春日饗宴．白石湖草莓季-登山健行x特色餐', href: 'https://www.titohiking.com.tw/products/group/detail?id=TW113220409A'}, {title: '丘山行-春日饗宴．白石湖草莓季-登山健行x特色餐x雙領隊', href: 'https://hillmont.tw/activities/greenyourjourney4/'}];
 
                     list.forEach(function(data, i) {
-                        if (i === 2 || i === 0) {
-                            strHtml += `<div><p>${data.title}</p><a  target="_blank"><img src="images/專屬遊程+報名按鈕圖檔2.png"></a></div>`;                          
-                        } else {
-                            strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
-                        }
+                        strHtml += `<div><p>${data.title}</p><a  target="_blank"><img src="images/專屬遊程+報名按鈕圖檔2.png"></a></div>`;
+                    })
+
+                    $('.theme-info > .theme-btn').hide();
+                    $('.theme-btn-content').html(strHtml);
+                } else if (id === '26') {
+                    let strHtml = '';
+                    const list = [{title: '可樂旅遊-貴子坑郊遊趣~臺北大縱走、貴子坑教育園區、地熱谷、北投溫泉博物館一日', href: 'https://www.colatour.com.tw/C10A_TourSell/C10A16_TourItinerary.aspx?PatternNo=202851'}, {title: '丘山行-【台北大縱走】特別企劃：貴子坑郊遊趣', href: 'https://hillmont.tw/activities/greenyourjourney5/'}, {title: '趣健行-【臺北大縱走】第一段健走挑戰-貴子坑郊遊趣', href: 'https://www.titohiking.com.tw/products/group/detail?id=TW113220514A'}];
+
+                    list.forEach(function(data, i) {
+                        strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
                     })
 
                     $('.theme-info > .theme-btn').hide();
