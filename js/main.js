@@ -92,7 +92,7 @@ $(document).ready(function () {
                     $('.theme-btn-content').html(strHtml);
                 } else if (id === '26') {
                     let strHtml = '';
-                    const list = [{title: '可樂旅遊-貴子坑郊遊趣~臺北大縱走、貴子坑教育園區、地熱谷、北投溫泉博物館一日', href: 'https://www.colatour.com.tw/C10A_TourSell/C10A16_TourItinerary.aspx?PatternNo=202851'}, {title: '丘山行-【台北大縱走】特別企劃：貴子坑郊遊趣', href: 'https://hillmont.tw/activities/greenyourjourney5/'}, {title: '趣健行-【臺北大縱走】第一段健走挑戰-貴子坑郊遊趣', href: 'https://www.titohiking.com.tw/products/group/detail?id=TW113220514A'}];
+                    const list = [{title: '可樂旅遊-貴子坑郊遊趣~臺北大縱走、貴子坑教育園區、地熱谷、北投溫泉博物館一日', href: 'https://www.colatour.com.tw/C10A_TourSell/C10A16_TourItinerary.aspx?PatternNo=202851'}, {title: '丘山行-【台北大縱走】特別企劃：貴子坑郊遊趣', href: 'https://hillmont.tw/activities/greenyourjourney5/'}, {title: '趣健行-【臺北大縱走】第一段健走挑戰-貴子坑郊遊趣', href: 'https://www.titohiking.com.tw/products/group/detail?id=TW113220514A'}, {title: '萬客隆-貴子坑郊遊趣x社子島卡打車采風', href: 'www.ezgotour.net'}, {title: 'ACCUPASS-貴子坑郊遊趣【候補報名】', href: 'https://www.accupass.com/go/hiking514'}];
 
                     list.forEach(function(data, i) {
                         strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
