@@ -104,6 +104,16 @@ $(document).ready(function () {
 
                     $('.theme-info > .theme-btn').hide();
                     $('.theme-btn-content').html(strHtml);
+                }  else if (id === '22') {
+                    let strHtml = '';
+                    const list = [{title: '.【趣健行】第二段健走挑戰-縱走之戀•遇見繡球花', href: 'https://bit.ly/3kbzwLo'}, {title: '【丘山行】特別企劃：遇見繡球花', href: 'https://hillmont.tw/activities/greenyourjourney6/'}];
+
+                    list.forEach(function(data, i) {
+                        strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
+                    })
+
+                    $('.theme-info > .theme-btn').hide();
+                    $('.theme-btn-content').html(strHtml);
                 } else {
                     $('.theme-info > .theme-btn').show();
                     $('.theme-btn-group').hide();
