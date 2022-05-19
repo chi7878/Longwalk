@@ -889,6 +889,10 @@
     line-height: 27px;
 }
 
+.theme-box > p > a {
+    color: #448578;
+}
+
 .theme-info {
     display: flex;
     align-items: center;

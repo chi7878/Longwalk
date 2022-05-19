@@ -46,7 +46,7 @@ $(document).ready(function () {
                 })
         
                 $('.theme-box > h3').text(findData.title);
-                $('.theme-box > p').text(findData.content);
+                $('.theme-box > p').html(findData.content);
                 $('.theme-date__item:nth-child(1) > p').text(findData.start_time);
                 $('.theme-date__item:nth-child(2) > p').text(findData.end_time);
 
