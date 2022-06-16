@@ -12,7 +12,6 @@ $(document).ready(function () {
         }, 0);
     });
 
-    $(".news-list").overlayScrollbars({});
     $(".nav-mobile__menu-scrollbar").overlayScrollbars({});
 
     const id = new URLSearchParams(window.location.search).get('id');
@@ -116,7 +115,7 @@ $(document).ready(function () {
                     $('.theme-btn-content').html(strHtml);
                 }else if (id === '21') {
                     let strHtml = '';
-                    const list = [{title: '丘山行-【台北大縱走】特別企劃：漫·攝·老地方', href: 'https://hillmont.tw/activities/greenyourjourney7/'}, {title: '趣健行-【臺北大縱走】第一段健走挑戰-貴子坑郊遊趣', href: 'https://www.titohiking.com.tw/products/group/mold?id=TW113E'}, {title: 'ACCUPASS-【漫·攝‧老地方】一日郊山手機攝影教學', href: 'https://www.accupass.com/go/hikingphotoshoot'}];
+                    const list = [{title: '趣健行-【臺北大縱走】第一段健走挑戰-貴子坑郊遊趣', href: 'https://www.titohiking.com.tw/products/group/mold?id=TW113E'}, {title: 'ACCUPASS-【漫·攝‧老地方】一日郊山手機攝影教學', href: 'https://www.accupass.com/go/hikingphotoshoot'}];
 
                     list.forEach(function(data, i) {
                         strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;

@@ -39,6 +39,7 @@ $(document).ready(function () {
                     window.location.href =  `${path}/newsInfo.html?id=${e.currentTarget.dataset.id}`;
                 });
             }
+            $(".news-list").overlayScrollbars({});
         }
     });
 
