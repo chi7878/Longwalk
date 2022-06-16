@@ -613,7 +613,7 @@ $(document).ready(function () {
         $('.popup-btn_confirm').click(function (e) { 
             e.preventDefault();
             const data = fromData();
-            data.status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : ($(`.input-label_radio > input[value='0']`)[0].checked ? 1 : 2);
+            data.status = $(`.input-label_radio > input[value='0']`)[0].checked ? 0 : ($(`.input-label_radio > input[value='1']`)[0].checked ? 1 : 2);
             data.content = data.status === 0 ? $(".input-file__text")[0].dataset.name : $(".input-label_videos > input").val();
             data.status === 0 && file !== undefined ? delete data.content : delete data.file;
             data.method =  selectData !== undefined ? 'update' : 'new';
