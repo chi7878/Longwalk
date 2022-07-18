@@ -94,11 +94,7 @@ $(document).ready(function () {
                     const list = [{title: '趣健行-【臺北大縱走】第一段健走挑戰-貴子坑郊遊趣', href: 'https://www.titohiking.com.tw/products/group/mold?id=TW113A'}, {title: 'ACCUPASS-貴子坑郊遊趣', href: 'https://www.accupass.com/go/hiking514'}];
 
                     list.forEach(function(data, i) {
-                        if (i === 2) {
-                            strHtml += `<div><p>${data.title}</p><a"><img src="images/專屬遊程+報名按鈕圖檔2.png"></a></div>`;
-                        } else {
-                            strHtml += `<div><p>${data.title}</p><a href="${data.href}" target="_blank"><img src="images/專屬遊程+報名按鈕圖檔1.png"></a></div>`;
-                        }
+                        strHtml += `<div><p>${data.title}</p><a  target="_blank"><img src="images/專屬遊程+報名按鈕圖檔2.png"></a></div>`;
                     })
 
                     $('.theme-info > .theme-btn').hide();

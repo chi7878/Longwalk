@@ -316,7 +316,7 @@
       },
       {
         "name": "光羽塩",
-        "href": "http://www.lytea.com.tw/phone/index.html",
+        "href": "https://www.facebook.com/lytea513/",
         "cellphone": ["02-2939-4050"],
         "address": "台北市文山區指南路三段38巷14之2號",
         "content": "每人消費滿250元即贈送鐵觀音茶凍乙份(價值35元.每人每日限贈乙份)"
@@ -427,13 +427,6 @@
         "content": "凡用餐加品茗即贈茶點一份"
       },
       {
-        "name": "咖啡巷",
-        "href": "https://www.facebook.com/maokongcafealley/",
-        "cellphone": ["02-2234-8637"],
-        "address": "台北市文山區指南路三段38巷33之5號",
-        "content": "喵喵霜淇淋第二支八折"
-      },
-      {
         "name": "雪敲",
         "href": "https://www.facebook.com/ice.climber.tp/",
         "cellphone": ["02-2939-9226"],
@@ -467,13 +460,6 @@
         "cellphone": ["0954-095-111"],
         "address": "台北市文山區指南路三段16之5",
         "content": "僅限內用消費即贈送茶酥一份"
-      },
-      {
-        "name": "正大茶園",
-        "href": "https://www.facebook.com/貓空正大休閒茶園-707135276081775/",
-        "cellphone": ["(02）29384060"],
-        "address": "台北市指南路三段38巷33-5號",
-        "content": "參加活動者到店家消費滿1000享9折優惠"
       }
     ],
     "travel": [
@@ -488,7 +474,7 @@
     "shop":  [
       {
         "name": "信大蔘茸行",
-        "href": "",
+        "href": "https://www.facebook.com/%E4%BF%A1%E5%A4%A7%E8%94%98%E8%8C%B8%E8%A1%8C-344394525601402/",
         "cellphone": ["02-25585978"],
         "address": "台北市大同區民生西路352號",
         "content": "養生藥膳調理包滿仟折佰"
@@ -537,7 +523,7 @@
       },
       {
         "name": "餅乾打人烘焙坊",
-        "href": "www.cookies123.com",
+        "href": "https://www.cookies123.com/",
         "cellphone": ["0923-190-095"],
         "address": "台北市大同區迪化街一段72巷14號",
         "content": "零售包餅乾、茶包、咖啡包(包含禮盒)享9折優惠"
@@ -572,7 +558,7 @@
       },
       {
         "name": "長勵實業有限公司",
-        "href": "https://www.facebook.com/",
+        "href": "https://www.facebook.com/%E9%95%B7%E5%8B%B5%E5%AF%A6%E6%A5%AD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8-557066360993392/",
         "cellphone": ["02-23118331"],
         "address": "台北市中正區博愛路16號",
         "content": "購買單反無反相機，單筆消費滿兩萬，送減壓背帶一條"
@@ -627,8 +613,8 @@
         "content": "背包、腳架配件、特價優惠"
       },
       {
-        "name": "優鮮庫純(醇香食品行)-台北博愛門市",
-        "href": "",
+        "name": "優鮮庫純(醇香食品行)-台北開封門市",
+        "href": "https://www.facebook.com/ucoolstorehouse",
         "cellphone": ["02-23814575"],
         "address": "台北市中正區開封街一段71號",
         "content": "鮮奶酪、布蕾任選買五送一杯裝飲料買三送一\n生乳捲買一送一杯裝飲品(不包含2捲699特價商品)"
@@ -740,28 +726,28 @@
       },
       {
         "name": "阿慶魷魚蒜",
-        "href": "",
+        "href": "https://www.facebook.com/888squid",
         "cellphone": ["0909-063-878"],
         "address": "台北市萬華區廣州街245號",
         "content": "各式串串買1送1"
       },
       {
         "name": "霸王鳥蛋",
-        "href": "",
+        "href": "https://www.facebook.com/%E9%9C%B8%E7%8E%8B%E9%B3%A5%E8%9B%8B-377202509726273/?ref=page_internal",
         "cellphone": ["0913-171-082"],
         "address": "台北市萬華區廣州街200、243號前中間",
         "content": "買4送1"
       },
       {
         "name": "陳媽媽仙草冰",
-        "href": "",
-        "cellphone": ["0913-171-082"],
+        "href": "https://spot.line.me/detail/615609051388058691",
+        "cellphone": ["0981-721-999"],
         "address": "台北市萬華區廣州街200號 前",
         "content": "買5送1"
       },
       {
         "name": "碗哥深坑臭豆腐",
-        "href": "",
+        "href": "https://www.facebook.com/profile.php?id=100057041606529",
         "cellphone": ["0921- 845-678"],
         "address": "台北市萬華區廣州街243號",
         "content": "每份折5元"
@@ -790,12 +776,12 @@
       {
         "name": "新營人牛肉",
         "href": "",
-        "cellphone": ["0939-886-011"],
+        "cellphone": ["0958-380-012"],
         "address": "臺北市大同區延平北路三段80號",
         "content": "炒麵、炒飯9折"
       },
       {
-        "name": "延三古早味",
+        "name": "延三夜市大腸麵線",
         "href": "",
         "cellphone": ["0930-155-001"],
         "address": "臺北市大同區延平北路三段36號之2",

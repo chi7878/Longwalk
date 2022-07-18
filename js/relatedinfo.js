@@ -118,10 +118,28 @@ $(document).ready(function () {
                 
         findData.shop.forEach(function(data) {
             const phone = data.cellphone.map(item => `<li>${item}</li>`).join('');
+            let titleStr = '';
+            let telStr = '';
+
+            if (data.href === '') {
+                titleStr = `<p class="relared-info__list-title">📍${data.name}</p>`;
+            } else {
+                titleStr = `<a href="${data.href}" class="relared-info__list-title" target="_blank">📍${data.name}</a>`;
+            }
+
+            if (phone.length !== 0) {
+                telStr = `
+                <div class="relared-info__list-content">
+                    <p>聯絡電話:</p>
+                    <ul>
+                    ${phone}
+                    </ul>
+                </div>`;
+            }
             
             strHtml += `
             <div class="relared-info__list">
-                <a href="${data.href}" class="relared-info__list-title" target="_blank">📍${data.name}</a>
+                ${titleStr}
                 <div class="relared-info__list-content">
                     <p>優惠內容:</p>
                     <p>${data.content}</p>
@@ -130,19 +148,14 @@ $(document).ready(function () {
                     <p>地址:</p>
                     <p>${data.address}</p>
                 </div>
-                <div class="relared-info__list-content">
-                    <p>聯絡電話:</p>
-                    <ul>
-                    ${phone}
-                    </ul>
-                </div>
+                ${telStr}
             </div>`;
         })
 
         findData.travel.forEach(function(data) {            
             travelStr += `
             <div class="relared-info__list">
-                <a href="${data.href}" class="relared-info__list-title" target="_blank">🚃${data.name}</a>
+                <p class="relared-info__list-title" target="_blank">🚃${data.name}</p>
             </div>`;
         })
     
