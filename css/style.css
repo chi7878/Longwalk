@@ -68,6 +68,7 @@ body, html {
     padding: 0 6%;
     box-sizing: border-box;
     background-color: #fff;
+    position: relative;
 }
 
 .nav-scroll {
@@ -273,6 +274,24 @@ body, html {
     color: #fff;
 }
 
+.nav-en {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #468d80;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 2px solid #468d80;
+    border-radius: 500px;
+    line-height: 40px;
+}
+
+.nav-en:hover {
+    background-color: #468d80;
+    color: #fff;
+}
 
 @media screen and (min-width: 1057px)  and (max-width: 1280px) {
     .nav {
@@ -281,6 +300,41 @@ body, html {
     
     .nav-scroll {
         padding: 0 3%;
+    }
+
+    .nav {
+        padding: 0 6%;
+        height: 80px;
+        background: #fff;
+    }
+
+    .nav-list {
+        display: none;
+    }
+
+    .nav-mobile {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-scroll {
+        padding: 0 3%;
+    }
+
+    .nav-mobile__logo > a {
+        display: block;
+    }
+
+    .nav-mobile__logo img {
+        height: 50px;
+    }
+
+    .nav-en {
+        display: none;
     }
 }
 
@@ -314,6 +368,10 @@ body, html {
 
     .nav-mobile__logo img {
         height: 50px;
+    }
+
+    .nav-en {
+        display: none;
     }
 }
 
