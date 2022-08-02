@@ -402,6 +402,10 @@ body, html {
     .nav-mobile__logo img {
         height: 50px;
     }
+
+    .nav-en {
+        display: none;
+    }
 }
 
 /*footer*/
