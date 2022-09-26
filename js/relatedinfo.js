@@ -155,7 +155,7 @@ $(document).ready(function () {
         findData.travel.forEach(function(data) {            
             travelStr += `
             <div class="relared-info__list">
-                <p class="relared-info__list-title" target="_blank">🚃${data.name}</p>
+                <a class="relared-info__list-title" href="${data.href}" target="_blank">🚃${data.name}</a>
             </div>`;
         })
     
